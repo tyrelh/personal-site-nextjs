@@ -46,7 +46,7 @@ export default function ArticlePreviewList(props: Props) {
               post?.tags?.length &&
               <p>
                 {post.tags.map((tag: string) => (
-                  <Tag>{tag}</Tag>
+                  <Tag key={tag}>{tag}</Tag>
                 ))}
               </p>
             }
