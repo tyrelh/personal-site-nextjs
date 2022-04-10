@@ -6,7 +6,7 @@ excerpt: "Upgrading our application from Grails 2 to Grails 3 has been a long pr
 hero: "/images/posts/GrailsAssetMigration.svg"
 tags: "grails"
 ---
-# Migrating Frontend Assets During Grails 2 → 3 Upgrade
+# Migrat&shy;ing Frontend Assets During Grails 2 → 3 Upgrade
 #### Dec 15, 2019
 
 Upgrading our application from Grails 2 to Grails 3 has been a long process. This is just one piece of that process.

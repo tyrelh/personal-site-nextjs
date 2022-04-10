@@ -6,7 +6,7 @@ excerpt: "I started this project in 2018 to help teach myself better object-orie
 hero: "/images/posts/lightshift-game-2.png"
 tags: "javascript game-dev"
 ---
-# Lightshift Game
+# Light&shy;shift Game
 #### Feb 1, 2020
 
 I started this project in 2018 to help teach myself better object-oriented programming structure, game update/draw loops, and JavaScript in general.

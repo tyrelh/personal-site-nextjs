@@ -6,7 +6,7 @@ excerpt: "In 2020 I began learning game development as a hobby. Now in the begin
 hero: "/images/posts/game-dev-godot.jpg"
 tags: "game-dev unity godot pixel-art"
 ---
-# My Introduction to Game Development
+# My Intro&shy;duction to Game Develop&shy;ment
 #### Mar 25, 2021
 
 I've been spending a lot of my free time recently on a new hobby. Pixel style 2D game development. Here is a little intro to my dive into 2D game development.

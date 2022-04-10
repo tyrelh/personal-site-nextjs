@@ -47,7 +47,6 @@ body.light-mode {
   @media (min-width: 375px)
   and (max-width: 812px) {
     font-size: 1.6em;
-    margin: 0 15px;
   }
 
   @media (max-width: 1000px) {
@@ -101,4 +100,6 @@ a {
   border-radius: 4px;
   font-family: $font-code;
   font-size: 0.9rem;
+  // line-height: 2rem;
+  margin-top: 10px;
 }

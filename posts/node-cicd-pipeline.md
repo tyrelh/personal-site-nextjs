@@ -6,7 +6,7 @@ excerpt: "Here is my journey into creating an automated continuous integration a
 hero: "/images/posts/node-cicd-pipeline-hero.png"
 tags: "github-actions ci/cd typescript aws"
 ---
-# Node CI/CD Pipeline using GitHub Actions & AWS Elastic Beanstalk
+# Node CI/CD Pipeline using GitHub Actions & AWS Elastic Bean&shy;stalk
 #### May 30, 2020
 Here is my journey into creating an automated workflow to test, build, and deploy a project I have been working on using Github Actions and Elastic Beanstalk.
 
