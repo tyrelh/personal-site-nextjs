@@ -6,6 +6,7 @@ import Footer from "../components/layout/Footer";
 import ThemeToggle from "../components/elements/ThemeToggle"
 import checkHeaderPos from "../utils/checkHeaderPos";
 import { useEffect } from "react";
+import Script from "next/script";
 
 const { Content } = Layout;
 
@@ -17,13 +18,19 @@ function MyApp({ Component, pageProps }: AppProps) {
   
   return (
     <>
-    <ThemeToggle/>
-    <Layout className="app">
-      <Content className="fadeIn">
-        <Component {...pageProps} />
-        <Footer/>
-      </Content>
-    </Layout>
+      <ThemeToggle/>
+      <Layout className="app">
+        <Content className="fadeIn">
+          <Component {...pageProps} />
+          <Footer/>
+        </Content>
+      </Layout>
+      {/* <Script
+        defer
+        data-domain="tyrelh.github.io"
+        data-api="https://spring-frog-7f22.tyrelh.workers.dev/tyrel/event"
+        src="https://spring-frog-7f22.tyrelh.workers.dev/tyrel/script.hash.js"
+      /> */}
     </>
   );
 }
