@@ -108,3 +108,4 @@ If you have any comments or suggestions please feel free to reach out to me on T
 
 * [The Phoenix Project - Gene Kim, Kevin Behr, and George Spafford](https://itrevolution.com/the-phoenix-project/)
 * [Improving how we deploy GitHub - GitHub Blog](https://github.blog/2021-01-25-improving-how-we-deploy-github/)
+* [DevOps principles - Atlassian](https://www.atlassian.com/devops/what-is-devops)
