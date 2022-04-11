@@ -16,7 +16,7 @@ export default function ArticlePreviewList(props: Props) {
   return (
     <List
       itemLayout="vertical"
-      size="large"
+      // size="large"
       split={false}
       dataSource={articleMetadataList}
       renderItem={ (post: PostMetadata) => (

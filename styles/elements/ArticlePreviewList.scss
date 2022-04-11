@@ -47,9 +47,11 @@
   }
 }
 
+.article-preview-title {
+  margin-top: 6px;
+}
+
 .article-preview-excerpt {
-  // letter-spacing: -0.06rem;
-  // margin-top: 20px;
   color: darken($color-main-text, 20%);
   font-size: 1.2rem;
   line-height: 1.7rem;
@@ -65,7 +67,7 @@
   width: 300px;
   @media (min-width : 375px)
   and (max-width : 812px) {
-    width: 360px;
+    width: 340px;
   }
   border-radius: 5px;
   box-shadow: 0 2px 8px rgba(black, 0.1);
