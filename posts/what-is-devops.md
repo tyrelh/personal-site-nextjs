@@ -79,7 +79,7 @@ But today, with things like IaC (infrastructure as code) and remote dev environm
 * __Writing code can be automated with new tools like [GitHub Copilot](https://copilot.github.com/).__ Copilot is a machine learning tool that has learned how to write code in many popular languages. While it can't directly replace a human developer yet, it can greatly speed up the process of writing code from scratch.
 * __Reviewing, unit-testing, and merging code can be automated with tools like GitHub and [GitHub Actions](https://github.com/features/actions).__ There is still a bit of human touch needed in the review process to ensure features are truly meeting the business needs of the brief, but reviewing security and dependencies for example can be greatly sped up with the help of automation tools. Running tests can be automated with a variety of CI tools. Merging code and resolving merge conflicts has become downright trivial with tools like git and GitHub.
 * __Deploying code to infrastructure can be automated with a variety of CD tools.__ I've been mainly interested in GitHub Actions and automating deployments to AWS. But I'm now also interested in learning more about AWS CDK (cloud development kit). [This blog post from GitHub](https://github.blog/2021-01-25-improving-how-we-deploy-github/) has been quite influential in my current thinking about automated deployments.
-* __App stats and error monitoring can be automated with tools like Sentry, Datadog, and NewRelic.__
+* __App stats and error monitoring can be automated with tools like Sentry, Datadog, and NewRelic.__ Those stats can be viewed through there respective dashboards or made more accessible through things like Slack bots.
 
 ## Not Only Software Development
 
@@ -98,7 +98,7 @@ Facilitating the development team to be more productive means a few things:
 * Make code easy and painless to write. Automate environment setup.
 * Make code simple to test. Automate tests.
 * Make code trivial to deploy when ready. Automate infrastructure and blue/green deployments.
-* Make data about development, testing, and deployment visible to the team. Automate data collection and illumination through things like Slack bots.
+* Make data about development, testing, and deployment visible to the team. Automate data collection and illumination with tools like Datadog.
 
 My summary and this article represents my understanding and opinions right now (Spring 2022). I am constantly learning and improving on my career journey and my knowledge and opinions will undoubtedly change over time.
 
@@ -106,6 +106,6 @@ If you have any comments or suggestions please feel free to reach out to me on T
 
 ## Resources
 
-* [The Phoenix Project - Gene Kim, Kevin Behr, and George Spafford](https://itrevolution.com/the-phoenix-project/)
-* [Improving how we deploy GitHub - GitHub Blog](https://github.blog/2021-01-25-improving-how-we-deploy-github/)
-* [DevOps principles - Atlassian](https://www.atlassian.com/devops/what-is-devops)
+* [The Phoenix Project](https://itrevolution.com/the-phoenix-project/) - Gene Kim, Kevin Behr, and George Spafford
+* [Improving how we deploy GitHub](https://github.blog/2021-01-25-improving-how-we-deploy-github/) - GitHub Blog
+* [DevOps principles](https://www.atlassian.com/devops/what-is-devops) - Atlassian
