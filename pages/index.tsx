@@ -9,6 +9,8 @@ import Anchor from "../components/elements/Anchor";
 import Title from "../components/elements/Title";
 import SectionHeading from "../components/elements/SectionHeading";
 import ArticlePreviewList from "../components/elements/ArticlePreviewList";
+import SocialCallout from "../components/elements/SocialCallout";
+
 
 export default function Home({ posts }) {
   return (
@@ -17,12 +19,17 @@ export default function Home({ posts }) {
 
       <Title>Hi, I&rsquo;m Tyrel.</Title>
 
+      
+
       <p>
         A software engineer constantly learning new skills and technologies. I
         work for <Anchor href="https://www.giftbit.com">Giftbit</Anchor>{" "}
         building great web services. You can see some of my work below as well
         as on my <Anchor href="https://github.com/tyrelh">Github</Anchor>.
+        <SocialCallout/>
       </p>
+
+      
 
       <SectionHeading>
         Articles

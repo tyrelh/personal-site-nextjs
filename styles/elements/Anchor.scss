@@ -13,6 +13,7 @@
       -o-transition: all .2s ease-in;
       -webkit-transition: all .2s ease-in;
       transition: all .2s ease-in;
+      // filter: drop-shadow(0 0 20px rgba($color-accent-first, 0.4));
     }
     circle {
       fill: $color-accent-first;
