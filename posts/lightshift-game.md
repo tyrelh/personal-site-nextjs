@@ -4,7 +4,7 @@ date: "Feb 1, 2020"
 author: "Tyrel Hiebert"
 excerpt: "I started this project in 2018 to help teach myself better object-oriented programming structure, game update/draw loops, and JavaScript in general. Implemented using the P5.js framework for the draw loop and canvas drawing functionality with nothing else but vanilla JavaScript."
 hero: "/images/posts/lightshift-game-2.png"
-tags: "javascript game-dev"
+tags: "javascript game-dev p5.js"
 ---
 # Light&shy;shift Game
 #### Feb 1, 2020
@@ -15,7 +15,14 @@ Implemented using the P5.js framework for the draw loop and canvas drawing funct
 
 [![Screenshot of game with triangle representing the ship in the center and white asteroids all around](lightshift-game-2.png)](https://tyrelh.github.io/lightshift-game/)
 
-You can [play the game](https://tyrelh.github.io/lightshift-game/) right now!
+You can [play the game](/lightshift-game/index.html) right now!
+
+Controls:
+
+* Left & Right Arrows: Turn
+* Up & Down Arrows: Boost
+* Shift: Shoot
+* Control: Jump
 
 ## Basic Overview
 
