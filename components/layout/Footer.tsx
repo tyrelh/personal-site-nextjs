@@ -12,7 +12,7 @@ export default function Footer() {
           {/* This site uses <Anchor href="https://plausible.io/">Plausible</Anchor> to collect privacy mindful visitor stats<br/> */}
         </p>
         <p>
-          I use <Anchor href="https://plausible.io/share/superflux.dev?auth=Q67sysI32qepJC7N-z5ci">Plausible.io</Anchor> to collect privacy respecting visitor analytics.
+          I use <Anchor href="https://plausible.io/superflux.dev">Plausible.io</Anchor> to collect privacy respecting visitor analytics.
         </p>
         <p>
           <Anchor href="https://www.github.com/tyrelh/personal-site-nextjs/"><GithubFilled /> View website source</Anchor>
