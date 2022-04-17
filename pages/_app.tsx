@@ -25,12 +25,16 @@ function MyApp({ Component, pageProps }: AppProps) {
           <Footer/>
         </Content>
       </Layout>
-      {/* <Script
-        defer
-        data-domain="tyrelh.github.io"
-        data-api="https://spring-frog-7f22.tyrelh.workers.dev/tyrel/event"
-        src="https://spring-frog-7f22.tyrelh.workers.dev/tyrel/script.hash.js"
-      /> */}
+      {
+        process.env.NODE_ENV == "production" &&
+        <Script
+          id="springfrog"
+          strategy="afterInteractive"
+          data-domain="superflux.dev"
+          data-api="https://spring-frog-7f22.tyrelh.workers.dev/tyrel/event"
+          src="https://spring-frog-7f22.tyrelh.workers.dev/tyrel/script.hash.js"
+        />
+      }
     </>
   );
 }
