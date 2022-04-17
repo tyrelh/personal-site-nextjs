@@ -13,7 +13,7 @@ In my role as a software engineer at my day job, I’ve been getting more intere
   
 This is a brief exploration into what DevOps is and how I see it relating to a small development team.
 
-![DevOps Cycle image from Atlassian](development-cycle.jpg)
+![DevOps Cycle from Atlassian](development-cycle.jpg)
 
 ## Index
 
