@@ -82,6 +82,7 @@ h3 {
   font-family: $font-header3;
   font-feature-settings: "ss02" on,"ss01" on;
   font-size: 2.2rem;
+  font-weight: 700;
   line-height: 2.2rem;
   color: $color-main-text;
   margin: 2.2rem 0 1rem 0;
@@ -127,13 +128,51 @@ a {
   text-decoration: none;
 }
 
+code {
+  font-size: 1.1rem;
+  font-family: $font-code;
+  letter-spacing: -0.08rem;
+  color: darken($color-main-text, 5%);
+  background: lighten($color-main-bg, 5%);
+  padding: 0 5px;
+  -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+pre {
+  background: lighten($color-main-bg, 5%);
+  border-radius: 10px;
+  padding: 1rem;
+  -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+  code {
+    padding: 0;
+
+    @media (min-width: 375px)
+    and (max-width: 812px) {
+      font-size: 1rem;
+    }
+  }
+}
+
+.light-mode {
+  pre {
+    background: darken($color-main-bg-light-theme, 5%);
+  }
+
+  code {
+    color: lighten($color-main-text-light-theme, 5%);
+    background: darken($color-main-bg-light-theme, 5%);
+  }
+}
 
 .underline {
   background-image: linear-gradient(120deg, rgba($color-accent-first, 0.85) 0%, rgba($color-accent-second, 0.85) 100%);
   background-repeat: no-repeat;
   //background-size: 100% 0.19em;
-  background-size: 98% 0.35em;
-  background-position: 100% 86%;
+  background-size: 100% 0.35em;
+  background-position: 15px 86%;
   padding-right: 1%;
   //transition: background-size 200ms ease-in;
 }

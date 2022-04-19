@@ -1,44 +1,103 @@
 
 @font-face {
   font-family: "Canela-Black";
-  src: url("https://cdn.decrypt.co/wp-content/themes/decrypt-media/assets/fonts/Canela-Black-Web.woff2") format("woff2")
+  src:
+    url("/fonts/Canela-Black.woff2")
+    format("woff2");
 }
-$font-canela: "Canela-Black", serif;
 
 @font-face {
-  font-family: "Alliance-No1-Regular";
-  src: url("https://github.blog/wp-content/themes/github-2021/assets/fonts/alliance/Alliance-No-1-Regular.woff2") format("woff2")
+  font-family: "Alliance-No1";
+  src:
+    url("/fonts/Alliance-No-1-Regular.woff2")
+    format("woff2");
+  font-weight: 400;
+  font-display: swap;
 }
-$font-alliance-regular: "Alliance-No1-Regular", sans-serif;
+@font-face {
+  font-family: "Alliance-No1";
+  src:
+    url("/fonts/Alliance-No-1-Medium.woff2")
+    format("woff2");
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Alliance-No1";
+  src:
+    url("/fonts/Alliance-No-1-Bold.woff2")
+    format("woff2");
+  font-weight: 600;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Alliance-No1";
+  src:
+    url("/fonts/Alliance-No-1-ExtraBold.woff2")
+    format("woff2");
+  font-weight: 700;
+  font-display: swap;
+}
 
 @font-face {
-  font-family: "Alliance-No1-Medium";
-  src: url("https://github.blog/wp-content/themes/github-2021/assets/fonts/alliance/Alliance-No-1-Medium.woff2") format("woff2")
-}
-$font-alliance-medium: "Alliance-No1-Medium", sans-serif;
-
-@font-face {
-  font-family: "Alliance-No1-Bold";
-  src: url("https://github.blog/wp-content/themes/github-2021/assets/fonts/alliance/Alliance-No-1-Bold.woff2") format("woff2")
-}
-$font-alliance-bold: "Alliance-No1-Bold", sans-serif;
-
-@font-face {
-  font-family: "Alliance-No1-ExtraBold";
-  src: url("https://github.blog/wp-content/themes/github-2021/assets/fonts/alliance/Alliance-No-1-ExtraBold.woff2") format("woff2")
-}
-$font-alliance-extrabold: "Alliance-No1-ExtraBold", sans-serif;
-
-@font-face {
-  font-family: "Cascadia-Code";
-  src: url("https://copilot.github.com/_next/static/media/CascadiaCode-SemiLight.ea2e95c37b0f5966785b45a4e16df742.woff2")
+  font-family: "JetBrainsMono";
+  src:
+    url("/fonts/JetBrainsMono-Regular.woff2")
+    format("woff2");
+  font-weight: 400;
+  font-display: swap;
 }
 
 $font-system: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 
-$font-monospace: ui-monospace, "SFMono-Regular", "SF Mono", Menlo, Consolas,"Liberation Mono", monospace;
+$font-monospace: "JetBrainsMono", ui-monospace, "SFMono-Regular", "SF Mono", Menlo, Consolas,"Liberation Mono", monospace;
 
-$font-body: $font-alliance-regular;
-$font-header: $font-canela;
-$font-header3: $font-alliance-extrabold;
+$font-body: "Alliance-No1";
+$font-header: "Canela-Black";
+$font-header3: "Alliance-No1";
 $font-code: $font-monospace;
+
+
+// @font-face {
+//   font-family: "Canela-Black";
+//   src: url("https://cdn.decrypt.co/wp-content/themes/decrypt-media/assets/fonts/Canela-Black-Web.woff2") format("woff2")
+// }
+// $font-canela: "Canela-Black", serif;
+
+// @font-face {
+//   font-family: "Alliance-No1-Regular";
+//   src: url("https://github.blog/wp-content/themes/github-2021/assets/fonts/alliance/Alliance-No-1-Regular.woff2") format("woff2")
+// }
+// $font-alliance-regular: "Alliance-No1-Regular", sans-serif;
+
+// @font-face {
+//   font-family: "Alliance-No1-Medium";
+//   src: url("https://github.blog/wp-content/themes/github-2021/assets/fonts/alliance/Alliance-No-1-Medium.woff2") format("woff2")
+// }
+// $font-alliance-medium: "Alliance-No1-Medium", sans-serif;
+
+// @font-face {
+//   font-family: "Alliance-No1-Bold";
+//   src: url("https://github.blog/wp-content/themes/github-2021/assets/fonts/alliance/Alliance-No-1-Bold.woff2") format("woff2")
+// }
+// $font-alliance-bold: "Alliance-No1-Bold", sans-serif;
+
+// @font-face {
+//   font-family: "Alliance-No1-ExtraBold";
+//   src: url("https://github.blog/wp-content/themes/github-2021/assets/fonts/alliance/Alliance-No-1-ExtraBold.woff2") format("woff2")
+// }
+// $font-alliance-extrabold: "Alliance-No1-ExtraBold", sans-serif;
+
+// @font-face {
+//   font-family: "Cascadia-Code";
+//   src: url("https://copilot.github.com/_next/static/media/CascadiaCode-SemiLight.ea2e95c37b0f5966785b45a4e16df742.woff2")
+// }
+
+// $font-system: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+// $font-monospace: ui-monospace, "SFMono-Regular", "SF Mono", Menlo, Consolas,"Liberation Mono", monospace;
+
+// $font-body: $font-alliance-regular;
+// $font-header: $font-canela;
+// $font-header3: $font-alliance-extrabold;
+// $font-code: $font-monospace;
