@@ -1,5 +1,5 @@
 import { List, Tag } from "antd"
-import { CalendarFilled } from "@ant-design/icons"
+import { CalendarFilled, ReadFilled } from "@ant-design/icons"
 import { PostMetadata } from "../../dtos/PostData"
 import Link from "next/link"
 import Image from "next/image"
@@ -36,7 +36,7 @@ export default function ArticlePreviewList(props: Props) {
             {
               post?.date &&
                 <h4>
-                  <CalendarFilled /> {post.date}
+                  <CalendarFilled /> {post.date}  <ReadFilled className="readtime-icon" /> {post.readTimeInMinutes} Minute Read
                 </h4>
             }
             <p className="article-preview-excerpt">

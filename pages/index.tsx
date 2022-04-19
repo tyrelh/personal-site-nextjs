@@ -10,6 +10,7 @@ import Title from "../components/elements/Title";
 import SectionHeading from "../components/elements/SectionHeading";
 import ArticlePreviewList from "../components/elements/ArticlePreviewList";
 import SocialCallout from "../components/elements/SocialCallout";
+import { calculateReadTimeOfText } from "../utils/textUtils";
 
 
 export default function Home({ posts }) {
@@ -19,17 +20,11 @@ export default function Home({ posts }) {
 
       <Title>Hi, I&rsquo;m Tyrel.</Title>
 
-      
-
       <p>
-        A software engineer constantly learning new skills and technologies. I
-        work for <Anchor href="https://www.giftbit.com">Giftbit</Anchor>{" "}
-        building great web services. You can see some of my work below as well
-        as on my <Anchor href="https://github.com/tyrelh">Github</Anchor>.
-        <SocialCallout/>
+        A software engineer constantly learning new skills and technologies. I work for <Anchor href="https://www.giftbit.com">Giftbit</Anchor> building great web services. You can see some of my work below as well as on my <Anchor href="https://github.com/tyrelh">Github</Anchor>.
       </p>
 
-      
+      <SocialCallout/>
 
       <SectionHeading>
         Articles
@@ -65,7 +60,9 @@ export const getStaticProps: GetStaticProps = async (
       path.join("posts", filename),
       "utf-8"
     );
-    const { data: frontmatter } = matter(markdownWithMeta);
+    const { data: frontmatter, content } = matter(markdownWithMeta);
+
+    const readTimeInMinutes = calculateReadTimeOfText(content);
 
     const metadata: PostMetadata = {
       title: frontmatter?.title,
@@ -73,7 +70,8 @@ export const getStaticProps: GetStaticProps = async (
       date: frontmatter?.date,
       hero: frontmatter?.hero,
       excerpt: frontmatter?.excerpt,
-      tags: frontmatter?.tags ? frontmatter.tags.split(" ") : null
+      tags: frontmatter?.tags ? frontmatter.tags.split(" ") : null,
+      readTimeInMinutes: readTimeInMinutes
     };
     return metadata;
   });

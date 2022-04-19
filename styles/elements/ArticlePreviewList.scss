@@ -48,12 +48,14 @@
   margin-top: 0;
 }
 
+.readtime-icon {
+  margin-left: 20px;
+}
+
 .article-preview-excerpt {
   color: darken($color-main-text, 20%);
   font-size: 1.1rem;
   line-height: 1.7rem;
-
-  
 }
 
 .ant-list-item-main {
