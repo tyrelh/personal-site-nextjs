@@ -65,20 +65,17 @@
 
 .article-preview-image {
   width: 300px;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(black, 0.1);
   @media (min-width : 375px)
   and (max-width : 812px) {
     width: 340px;
   }
-  border-radius: 5px;
-  box-shadow: 0 2px 8px rgba(black, 0.1);
-  position: relative;
-  //box-shadow: 2px 2px 0 0 rgba($amethyst, 0.9);
 }
 
 .light-mode {
   .article-preview-image {
     box-shadow: 0 2px 8px rgba(black, 0.1);
-    //box-shadow: 2px 2px 0 0 rgba(darken($amethyst, 10%), 0.7);
   }
 }
 
