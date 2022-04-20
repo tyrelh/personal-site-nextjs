@@ -5,7 +5,7 @@
 // ANT LIST #################################################################
 .ant-list-items .ant-list-item {
   border-radius: 15px;
-  padding: 1.5rem !important;
+  padding: 1.0rem !important;
   margin-bottom: 35px;
   // background-color: lighten($color-main-bg, 0.5%);
   // box-shadow:
@@ -73,8 +73,8 @@
 
 .article-preview-image {
   width: 320px;
-  border-radius: 5px;
-  box-shadow: 0 2px 8px rgba(black, 0.1);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(black, 0.2);
   @media (min-width : 375px)
   and (max-width : 812px) {
     width: 340px;

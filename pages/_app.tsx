@@ -12,13 +12,12 @@ const { Content } = Layout;
 
 function MyApp({ Component, pageProps }: AppProps) {
 
-  useEffect(() => {
-    window.addEventListener("scroll", checkHeaderPos);
-  })
+  // useEffect(() => {
+  //   window.addEventListener("scroll", checkHeaderPos);
+  // })
   
   return (
     <>
-      <ThemeToggle/>
       <Layout className="app">
         <Content className="fadeIn">
           <Component {...pageProps} />

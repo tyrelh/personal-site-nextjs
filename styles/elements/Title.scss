@@ -1,12 +1,6 @@
 @import "../_colors.scss";
 @import "../_fonts.scss";
 
-.heading {
-  top: 0;
-  padding: 1em 0 1.5em 0;
-  z-index: 5;
-}
-
 .light-mode header {
   h1 {
     color: $color-main-text-light-theme;
@@ -35,23 +29,3 @@
 .nameContainer {
   margin: 0 0 1em 0;
 }
-
-// h1 {
-//   .underline {
-//     background-image: linear-gradient(120deg, rgba($cerulean, 0.8) 0%, rgba($purple, 0.8) 100%);
-//     background-repeat: no-repeat;
-//     //background-size: 100% 0.19em;
-//     background-size: 98% 0.3em;
-//     background-position: 100% 86%;
-//     padding-right: 1%;
-//     //transition: background-size 200ms ease-in;
-//   }
-// }
-
-// .light-mode {
-//   h1 {
-//     .underline {
-//       background-image: linear-gradient(120deg, rgba($cerulean, 0.9) 0%, rgba($purple, 0.9) 100%);
-//     }
-//   }
-// }
