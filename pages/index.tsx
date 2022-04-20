@@ -6,21 +6,22 @@ import { PostMetadata, PostMetadataList } from "../dtos/PostData";
 import { sortPostsByDate } from "../utils/dateUtils";
 import HeadW from "../components/layout/HeadW";
 import Anchor from "../components/elements/Anchor";
-import Title from "../components/elements/Title";
 import SectionHeading from "../components/elements/SectionHeading";
 import ArticlePreviewList from "../components/elements/ArticlePreviewList";
 import SocialCallout from "../components/elements/SocialCallout";
 import { calculateReadTimeOfText } from "../utils/textUtils";
-import Breadcrumbs from "../components/elements/Breadcrumbs";
+import StickyHeader from "../components/elements/StickyHeader";
 
 
 export default function Home({ posts }) {
   return (
     <>
       <HeadW title="superflux" />
-      <Breadcrumbs />
+      <StickyHeader />
 
-      <h1>Hi, I&rsquo;m Tyrel.</h1>
+      <h1>
+        Hi, I&rsquo;m Tyrel.
+      </h1>
 
       <p>
         A software engineer constantly learning new skills and technologies. I work for <Anchor href="https://www.giftbit.com">Giftbit</Anchor> building great web services. You can see some of my work below as well as on my <Anchor href="https://github.com/tyrelh">Github</Anchor>.

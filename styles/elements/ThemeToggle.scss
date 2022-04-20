@@ -19,8 +19,8 @@
 
   @media (min-width: 375px)
   and (max-width: 812px) {
-    top: 2px;
-    right: 16px;
+    top: -1px;
+    right: 10px;
   }  
 
   .toggle-icon {
@@ -28,22 +28,24 @@
     height: 1em;
 
     @media (min-width: 375px) and (max-width: 812px) {
-      width: 0.9em;
-      height: 0.9em;
+      width: 0.8em;
+      height: 0.8em;
     }
 
     .sun-icon {
       fill: $color-main-text;
+      // fill: $color-main-text-light-theme;
     }
 
     .moon-icon {
       fill: $color-main-text-light-theme;
+      // fill: $color-main-text;
     }
   }
 }
 
-.light-mode {
-  .toggle-container {
-    // background-color: rgba($color-main-bg-light-theme, 0.9);
-  }
-}
+// .light-mode {
+//   .toggle-container {
+//     // background-color: rgba($color-main-bg-light-theme, 0.9);
+//   }
+// }

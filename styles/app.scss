@@ -31,7 +31,8 @@ body {
 }
 
 body.light-mode {
-  background-color: lighten($color-main-bg, 3%);
+  // background-color: lighten($color-main-bg, 3%);
+  background-color: darken($color-main-bg-light-theme, 10%);
 }
 
 .app {

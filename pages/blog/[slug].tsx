@@ -13,7 +13,7 @@ import { PostData, PostMetadataList } from "../../dtos/PostData";
 import HeadW from "../../components/layout/HeadW";
 import Anchor from "../../components/elements/Anchor";
 import { getOptions, renderer } from "../../utils/markedUtils"
-import Breadcrumbs from "../../components/elements/Breadcrumbs";
+import StickyHeader from "../../components/elements/StickyHeader";
 
 marked.setOptions(getOptions())
 marked.use({ renderer })
@@ -22,7 +22,7 @@ export default function PostPage(post: PostData) {
   return (
     <>
       <HeadW title={post.title} />
-      <Breadcrumbs title={post.title} path="blog"/>
+      <StickyHeader title={post.title} path="blog"/>
       <div dangerouslySetInnerHTML={{ __html: marked.parse(post.content) }}></div>
     </>
   );
