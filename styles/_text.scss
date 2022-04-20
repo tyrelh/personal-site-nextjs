@@ -56,7 +56,7 @@ h2 {
   line-height: 3.4rem;
   margin: 3rem 0 2rem 0;
   color: $color-main-text;
-  text-shadow: 0 5px 20px rgba(black, 0.3);
+  text-shadow: 0 0 10px rgba(black, 0.3);
   -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
   transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
@@ -73,7 +73,7 @@ and (max-width: 812px) {
 .light-mode {
   h2 {
     color: $color-main-text-light-theme;
-    text-shadow: 0 5px 20px rgba(lighten($color-main-bg-light-theme, 5%), 0.2);
+    text-shadow: 0 0 10px rgba(lighten($color-main-bg-light-theme, 10%), 0.3);
     
   }
 }
@@ -123,10 +123,6 @@ h4 {
 p {
   white-space: pre-wrap;
   margin:1rem 0;
-}
-
-a {
-  text-decoration: none;
 }
 
 code {

@@ -30,13 +30,17 @@
     // color: $color-main-text;
     font-weight: 600;
     background-color: $color-accent-first;
-    background-image: linear-gradient(45deg, $color-accent-first, $color-accent-second);
+    background-image: linear-gradient(45deg, $color-accent-first, lighten($color-accent-second, 3%));
     background-size: 100%;
     background-clip: text;
     -webkit-background-clip: text;
     -moz-background-clip: text;
     -webkit-text-fill-color: transparent; 
     -moz-text-fill-color: transparent;
+  }
+
+  a:hover {
+    background-image: linear-gradient(45deg, lighten($color-accent-first, 10%), lighten($color-accent-second, 10%));
   }
 
   .anticon {

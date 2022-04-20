@@ -1,8 +1,12 @@
 @import "../_colors.scss";
 
+a {
+  text-decoration: none;
+}
+
 .anchor {
   a {
-    color: $color-accent-first;
+    // color: $color-accent-first;
     -moz-transition: all .2s ease-in;
     -o-transition: all .2s ease-in;
     -webkit-transition: all .2s ease-in;
