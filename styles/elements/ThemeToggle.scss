@@ -8,7 +8,7 @@
   padding-left: 1px;
   // top: 16px;
   right: 24px;
-  top: 4px;
+  top: 6px;
   position: fixed;
   z-index: 4;
   // border-radius: 30px;
@@ -19,8 +19,8 @@
 
   @media (min-width: 375px)
   and (max-width: 812px) {
-    top: -1px;
-    right: 10px;
+    top: 0px;
+    right: 11px;
   }  
 
   .toggle-icon {

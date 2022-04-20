@@ -7,7 +7,7 @@
 }
 
 .breadcrumbs {
-  padding: 5px 20px;
+  padding: 8px 20px;
   background-color: rgba($color-main-bg, 1);
   // box-shadow: 0px 4px 8px 0px rgba(black, 0.3);
   font-family: $font-code;
@@ -23,7 +23,7 @@
   and (max-width: 812px) {
     font-size: 0.8rem;
     letter-spacing: -0.08rem;
-    padding: 5px 10px;
+    padding: 7px 10px;
   }
 
   a {
