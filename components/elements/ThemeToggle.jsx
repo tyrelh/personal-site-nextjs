@@ -14,11 +14,17 @@ export default class ThemeToggle extends React.Component {
   componentDidMount() {
     const userPrefersDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
     if (!userPrefersDarkMode && !this.state.lightMode) {
+      console.log("toggled2");
       this.toggleTheme();
+    } else if (document.body.classList.contains("light-mode")) {
+      this.setState({
+        lightMode: true
+      });
     }
   }
 
   toggleTheme = async () => {
+    console.log("toggled");
     await this.setState({
       lightMode: !this.state.lightMode
     });
