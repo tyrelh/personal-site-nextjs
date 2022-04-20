@@ -107,16 +107,26 @@ h3 {
 
 h4 {
   color: darken($color-main-text, 50%);
-  font-size: 1.0rem !important;
+  font-size: 0.9rem !important;
   // margin-top: 0.15rem;
   .anticon {
     margin-right: 0.4rem;
+    svg path {
+      fill: darken($color-main-text, 50%);
+    }
   }
+
+  
 }
 
 .light-mode {
   h4 {
-    color: darken($color-main-text, 20%);
+    color: lighten($color-main-text-light-theme, 50%);
+    .anticon {
+      svg path {
+        fill: lighten($color-main-text-light-theme, 50%);
+      }
+    }
   }
 }
 
