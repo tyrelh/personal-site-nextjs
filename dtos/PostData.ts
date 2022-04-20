@@ -5,7 +5,7 @@ export interface PostMetadata {
     excerpt: string;
     hero: string;
     tags: string[];
-    readTimeInMinutes: number;
+    readTimeInMinutes?: number;
 }
 
 export interface PostData extends PostMetadata {
