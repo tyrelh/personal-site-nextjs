@@ -1,5 +1,5 @@
 
-const AVG_READING_WPM = 225;
+const AVG_READING_WPM = 200;
 
 export const calculateReadTimeOfText = (text: string): number => {
   const tokens = text.split(" ");
