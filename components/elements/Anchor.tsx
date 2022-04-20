@@ -9,15 +9,25 @@ export default function Anchor(props: Props) {
   function buildAnchor() {
     switch (props.href.charAt(0)) {
       case "/":
-        return <Link href={props.href}>{props.children}</Link>;
+        return (
+          <Link href={props.href}>
+            <a>
+              { props.children }
+            </a>
+          </Link>
+        );
       default:
         return (
           <a href={props.href} target="_blank" rel="noopener noreferrer">
-            {props.children}
+            { props.children }
           </a>
         );
     }
   }
 
-  return <span className="anchor">{buildAnchor()}</span>;
+  return (
+    <span className="anchor">
+      { buildAnchor() }
+    </span>
+  );
 }
