@@ -33,13 +33,13 @@ Here are the resources I found interesting. Some related to kids, some related t
 ## Books
 [The Phoenix Project](https://app.thestorygraph.com/books/2dc432fb-c009-4190-aaae-15c6468d666d) (2013) by Gene Kim, Kevin Behr, and George Spafford: A Novel About IT, DevOps, and Helping Your Business Win.
 
-I really enjoyed this. It's a novel from the perspective of someone who gets an abrupt unwanted promotion to the head of IT and then needs to turn the direction of the company around by completely reinvisioning almost every process in place in the IT department. From writing code, review and ticketing, provisioning on-prem and cloud hardware, deployments, and everything else. I'm excited to read the sister book as well: [The Unicorn Project](https://app.thestorygraph.com/books/cbf30b75-b17c-4bef-983e-4a86dc92e7fc) (2019).
+* I really enjoyed this. It's a novel from the perspective of someone who gets an abrupt unwanted promotion to the head of IT and then needs to turn the direction of the company around by completely reinvisioning almost every process in place in the IT department. From writing code, review and ticketing, provisioning on-prem and cloud hardware, deployments, and everything else. I'm excited to read the sister book as well: [The Unicorn Project](https://app.thestorygraph.com/books/cbf30b75-b17c-4bef-983e-4a86dc92e7fc) (2019).
 
 [Expecting Better](https://app.thestorygraph.com/books/523835c7-8f5f-47b5-b8fb-9e0be6ae10d2) (2013) by Emily Oster: Why the Conventional Pregnancy Wisdom is Wrong - and What You Really Need to Know
 
 [Cribsheet](https://app.thestorygraph.com/books/b6d7e4b6-ca35-43f4-9412-0328e07817f1) (2019) by Emily Oster: A Data-Driven Guide to Better, More Relaxed Parenting, from Birth to Preschool
 
-[Emily Oster](https://emilyoster.net/) wrote a great series of books on having and raising children that dive into common questions and practices and the evidence and statistics behind them. *Expecting Better* ranges from conception to birth, *Cribsheet* from birth to preschool-age, and *The Family Firm* for early school years. Highly recommend her when looking for data-backed advice.
+* [Emily Oster](https://emilyoster.net/) wrote a great series of books on having and raising children that dive into common questions and practices and the evidence and statistics behind them. *Expecting Better* ranges from conception to birth, *Cribsheet* from birth to preschool-age, and *The Family Firm* for early school years. Highly recommend her when looking for data-backed advice.
 
 
 ## Web Dev
