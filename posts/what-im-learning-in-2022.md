@@ -9,7 +9,7 @@ tags: "docker github-actions neovim vpn synology ssl static-site-generators"
 # What I'm Learning in 2022
 #### March 23, 2022
 
-Here are some things that I'd like to learn more about in 2022. This is kindof a reference for myself. So I can look back at this next year and reflect on what I learned and what I wanted to learn. [Let me know on twitter](https://twitter.com/tyrelhiebert) if you are learning these same things or you have any tips or resources to share!
+Here are some things that I'd like to learn more about in 2022. This is kindof a reference for myself. So I can look back at this next year and reflect on what I learned and what I wanted to learn. [Let me know on twitter](https://twitter.com/tyreldelaney) if you are learning these same things or you have any tips or resources to share!
 
 ![Logo montage of all the technologies outlined in this article](what-im-learning-in-2022.jpg)
 
@@ -112,4 +112,4 @@ Just something I'm interested in learning more about.
 
 ## End
 
-[@ me on twitter](https://twitter.com/tyrelhiebert) if you are learning these same things or you have any tips or resources to share!
+[@ me on twitter](https://twitter.com/tyreldelaney) if you are learning these same things or you have any tips or resources to share!

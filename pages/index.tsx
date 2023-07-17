@@ -40,7 +40,7 @@ export default function Home({ posts }) {
       </SectionHeading>
 
       <p>
-        Feel free to contact me via <Anchor href="https://twitter.com/tyrelhiebert">Twitter</Anchor>!
+        Feel free to contact me via <Anchor href="https://twitter.com/tyreldelaney">Twitter</Anchor>!
       </p>
     </>
   );

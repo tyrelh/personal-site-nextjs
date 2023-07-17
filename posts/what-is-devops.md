@@ -102,7 +102,7 @@ Facilitating the development team to be more productive means a few things:
 
 My summary and this article represents my understanding and opinions right now (Spring 2022). I am constantly learning and improving on my career journey and my knowledge and opinions will undoubtedly change over time.
 
-If you have any comments or suggestions please feel free to reach out to me on Twitter [@tyrelhiebert](https://twitter.com/tyrelhiebert)! 👋🏻
+If you have any comments or suggestions please feel free to reach out to me on Twitter [@tyreldelaney](https://twitter.com/tyreldelaney)! 👋🏻
 
 ## Resources
 
