@@ -30,7 +30,7 @@ export default function StickyHeader(props: Props) {
         }
         
       </div>
-      <div className="headerColorBar"></div>
+      {/* <div className="headerColorBar"></div> */}
   </div>
   )
 }
