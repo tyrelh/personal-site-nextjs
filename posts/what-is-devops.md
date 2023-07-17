@@ -2,14 +2,14 @@
 title: "What is DevOps?"
 date: "April 10, 2022"
 author: "Tyrel Hiebert"
-excerpt: "In my role as a software engineer at my day job, I’ve been getting more interested in DevOps as a career trajectory. But what does that even mean? Do I even know? This is a brief exploration into what DevOps is and how I see it relating to a small development team."
+excerpt: "In my role as a software developer at my day job, I’ve been getting more interested in DevOps as a career trajectory. But what does that even mean? Do I even know? This is a brief exploration into what DevOps is and how I see it relating to a small development team."
 hero: "/images/posts/development-cycle.jpg"
 tags: "devops automation github-actions"
 ---
 # What is DevOps?
 #### April 10, 2022
 
-In my role as a software engineer at my day job, I’ve been getting more interested in DevOps as a career trajectory. But what does that even mean? Do I even know?
+In my role as a software developer at my day job, I’ve been getting more interested in DevOps as a career trajectory. But what does that even mean? Do I even know?
   
 This is a brief exploration into what DevOps is and how I see it relating to a small development team.
 
@@ -35,7 +35,7 @@ Here are a few key ideas that I think define what DevOps is and what someone in 
 * Automate testing so developers and teams are confident in the code being produced. Developers shouldn't have to "remember" to run tests.
 * Automate infrastructure provisioning and blue/green deployments. Code that's reviewed and ready to go should be able to reach customers with a single click (with proper authentication). Make deploying new code trivial.
 * Automate data collection and illumination for the dev team primarily but also for the business side depending on the size of your company.
-* And I think in general, a DevOps role should facilitate software development by increasing confidence in work being done by both engineers and product managers.
+* And I think in general, a DevOps role should facilitate software development by increasing confidence in work being done by both developers and product managers.
 
 ## Initial Assumptions
 
@@ -49,7 +49,7 @@ Within a software company, big or small, there are various so-called “Operatio
 
 What do I mean by Facilitators? These are roles that essentially amplify the work in a given area or team. Their job is to ensure process and procedure are in place so that work can get done effectively, impactfully, and efficiently. It’s not necessarily their job to oversee the work being done, but to boost the impact and productivity of the work being done.
 
-DevOps is short for Development Operations. And in my context as a software engineer, Development is actually short for Software Development (Development can mean many different things in different fields).
+DevOps is short for Development Operations. And in my context as a software developer, Development is actually short for Software Development (Development can mean many different things in different fields).
   
 So in more plain language, the role of DevOps is related to the operations of the development team and the development lifecycle. Ok, so that sounds more appropriate than just “cloud infrastructure”, but what is involved in the operations of those things?
 
