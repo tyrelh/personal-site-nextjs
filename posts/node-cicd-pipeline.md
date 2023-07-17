@@ -37,7 +37,7 @@ Eventually I became frustrated with Deno's, frankly, lack of polish. It isn't a 
 Hopefully I will have by now put together a small article here about migrating a JavaScript Node project to TypeScript. If not check back soon!
 
 ## Testing
-During development of my Deno TypeScript battlesnake I actually [already set up automated testing using Github Actions](https://tyrelh.github.io/#/blog/2020/deno-tests-and-github-actions). That worked really well and Deno's included test runner is really simple and easy to use.
+During development of my Deno TypeScript battlesnake I actually [already set up automated testing using Github Actions](https://superflux.dev/blog/deno-tests-and-github-actions). That worked really well and Deno's included test runner is really simple and easy to use.
 
 Bringing my tests over to Node I used what seems like the most popular option which is [Mocha](https://mochajs.org/). I've never used it before but it seems fine.
 

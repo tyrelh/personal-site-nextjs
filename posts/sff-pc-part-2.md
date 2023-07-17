@@ -9,7 +9,7 @@ tags: "pc gaming hardware"
 # Small Form Factor PC Part 2 - Water Cooling
 #### Jan 25, 2021
 
-This is a continuation of my small form factor PC build. [Part 1 was getting the major components installed and the computer running](https://tyrelh.github.io/#/blog/2021/sff-pc-part-1), and part 2 is adding water cooling for the CPU and GPU. You can add to the discussion if you like on [Reddit](https://www.reddit.com/r/sffpc/comments/l56xdr/metalfish_s5_5800x_3080_barrow_pumpblock_first/).
+This is a continuation of my small form factor PC build. [Part 1 was getting the major components installed and the computer running](https://superflux.dev/blog/sff-pc-part-1), and part 2 is adding water cooling for the CPU and GPU. You can add to the discussion if you like on [Reddit](https://www.reddit.com/r/sffpc/comments/l56xdr/metalfish_s5_5800x_3080_barrow_pumpblock_first/).
 
 ![Wide picture of entire desk showing my monitor, pc, keyboard, mouse, and speakers. There is a window behind the monitor and plants on either side.](sff-pc-part-2-3.jpeg)
 
@@ -40,7 +40,7 @@ A sorta disclaimer: the combination of SFF and custom water cooling is tricky to
 
 Also I talk a bit about my experience mining crypto. This is foremost a gaming and productivity machine and I enjoy mining on the side when my system is idle. Please no judgement or hate from gamers hating on miners. There is no harm (to component prices) in mining on the side with your gaming PC.
 
-I outlined in a [previous post](https://tyrelh.github.io/#/blog/2021/sff-pc-part-1) the initial build and components. This post is my experience upgrading to a full custom water cooling loop for both the CPU and GPU. If you are unaware, "custom" water cooling means that I acquired and assembled all the water cooling components myself and decided on the configuration. That is in contrast to all-in-one (AIO) water coolers available for CPUs and GPUs. These come assembled with a pump, radiator, tubing, and coolant all assembled and sealed, and installation is simple.
+I outlined in a [previous post](https://superflux.dev/blog/sff-pc-part-1) the initial build and components. This post is my experience upgrading to a full custom water cooling loop for both the CPU and GPU. If you are unaware, "custom" water cooling means that I acquired and assembled all the water cooling components myself and decided on the configuration. That is in contrast to all-in-one (AIO) water coolers available for CPUs and GPUs. These come assembled with a pump, radiator, tubing, and coolant all assembled and sealed, and installation is simple.
 
 ## PC Components
 * • [Metalfish S5 case from AliExpress](https://www.aliexpress.com/wholesale?catId=0&initiative_id=SB_20210124122625&origin=y&SearchText=metalfish+s5)
@@ -123,7 +123,7 @@ The front power LED is a very bright blue and I actually have left it disconnect
 
 ![Close up picture of the power supply mounted on the back panel of the case in the upper right corner, seen behind the black water tubing.](sff-pc-part-2-8.jpeg)
 
-The case comes with a small bracket to hang the power supply on the front and back side of the case. [This is how I had it installed in part 1 of the build](https://tyrelh.github.io/#/blog/2021/sff-pc-part-1). I instead wanted to install it flat on the back panel beside the motherboard to leave more room for the water tubing in front. I used 4 pieces of strong double sided tape to adhere it in place and that seems to work extremely well. I used less than 3 square cm of tape (in 4 pieces) as I wanted to be able to remove it without damaging the aluminium. The back of the PSU is facing up to exhaust heat, the fan is facing forward, and the connections are pointing down.
+The case comes with a small bracket to hang the power supply on the front and back side of the case. [This is how I had it installed in part 1 of the build](https://superflux.dev/blog/sff-pc-part-1). I instead wanted to install it flat on the back panel beside the motherboard to leave more room for the water tubing in front. I used 4 pieces of strong double sided tape to adhere it in place and that seems to work extremely well. I used less than 3 square cm of tape (in 4 pieces) as I wanted to be able to remove it without damaging the aluminium. The back of the PSU is facing up to exhaust heat, the fan is facing forward, and the connections are pointing down.
 
 I was actually very satisfied with the [Corsair SF750](https://www.corsair.com/us/en/Categories/Products/Power-Supply-Units/Power-Supply-Units-Advanced/SF-Series/p/CP-9020186-NA)'s included power cables. They have black sleeves and are quite short as they are designed for SFF cases. The CPU and motherboard power cables are almost the perfect length, they route nicely between the motherboard and PSU and connect easily.
 
