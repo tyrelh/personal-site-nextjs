@@ -9,8 +9,6 @@ tags: "synology nas data-ownership hardware"
 
 # What is a Synology NAS?
 
-#synology #nas #data-ownership #hardware 
-
 ## Tl;dr
 
 * [Preamble](#preamble): I got a Synology NAS.
@@ -24,7 +22,7 @@ tags: "synology nas data-ownership hardware"
 
 I recently got a [Synology DS416play](https://www.google.com/search?sxsrf=AB5stBhZ_2DvwOiqGrHwxnOJYVgTYOSiHQ:1689739870654&q=synology+ds416play&tbm=isch&sa=X&ved=2ahUKEwjM6YLG85mAAxWMDEQIHS_wDRgQ0pQJegQICxAB&biw=855&bih=986&dpr=1.75) second-hand when my employer decided to give up our physical office space and go fully remote. My device is around 7 years old, but equivalent modern devices from Synology will run between $250 - $800 without hard drives depending on how many drive bays you want. This model has four 4TB drives, which gives me around 11TB of usable space with the RAID version I chose.
 
-![[synology-nas.png]]
+![](./synology-nas.png)
 
 ## What is a Synology NAS?
 
@@ -36,7 +34,7 @@ This is one function that my Synology NAS serves. But Synology NAS devices can d
 
 [DSM](https://www.synology.com/en-ca/dsm), or DiskStation Manager, is the operating system that Synology devices use (at least the at-home/small-office variants). It has a nice web-based desktop interface that is familiar and easy to use.
 
-![[synology-dsm-desktop.png]]
+![](./synology-dsm-desktop.png)
 
 When setting up for the first time, you choose what kind of file system and RAID type you want to use. I used Synology Hybrid RAID and [Btrfs](https://en.wikipedia.org/wiki/Btrfs). Btrfs is generally recommended for it's features and performance, although I don't really know more about it. And the RAID type was the suggested type when setting it up I believe, it gives 1 drive fault tolerance according to the Storage Manager.
 
@@ -50,7 +48,7 @@ While this device lives in your home or office, you can still access it from the
 
 I personally just use Synology's [Quick Connect](https://kb.synology.com/en-us/DSM/help/DSM/AdminCenter/connection_quickconnect?version=7). It's really simple to setup and use, and it's secure (secure enough for me anyway). Once you're setup with DSM's settings, you simply visit `<your QuickConnect ID>.quickconnect.to` and log in to your DSM user. The QuickConnect service will automatically route you over the local network if it detects you're on the same network of your Synology device, or though Synology's servers if you're on the internet.
 
-![[synology-quickconnect.png]]
+![](./synology-quickconnect.png)
 
 QuickConnect also works great with other apps and services from Synology, like Photos and Drive. So it makes it really easy to use those services on the internet as well.
 
@@ -63,8 +61,6 @@ The real power of a Synology NAS comes from the fantastic apps they provide. The
 I don't use all the apps available, but I make heavy use of Synology Photos and Synology Drive.
 
 Check out my follow up post (when it comes) to see the details of how I use my Synology NAS.
-
-[[synology how I store everything on my nas]]
 
 ## Resources and links
 
