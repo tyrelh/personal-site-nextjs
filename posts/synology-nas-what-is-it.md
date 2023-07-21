@@ -2,8 +2,8 @@
 title: "What is a Synology NAS?"
 date: "July 18, 2023"
 author: "Tyrel Delaney"
-excerpt: "I recently got a Synology NAS. What does that even mean?"
-hero: "/images/posts/synology-ds416play.jpg"
+excerpt: "I recently got myself a Synology NAS. What does that even mean? In this part one of two, I talk a bit about what a Synology NAS is. In part two, I'll talk about the cool things I do with mine."
+hero: "/images/posts/synology-nas.png"
 tags: "synology nas data-ownership hardware"
 ---
 
@@ -12,7 +12,7 @@ tags: "synology nas data-ownership hardware"
 ## Tl;dr
 
 * [Preamble](#preamble): I got a Synology NAS.
-* [What is a Synology NAS?](#what-is-a-synology): Synology is a brand of NAS (network attached storage) devices that run a proprietary operating system called DSM (DiskStation Manager).
+* [What is a Synology NAS?](#so-what-is-it): Synology is a brand of NAS (network attached storage) devices that have a whole suite of great software that extend their capabilities.
 * [DSM (DiskStation Manager)](#dsm-diskstation-manager): The operating system that Synology NAS's use.
 * [Online access](#online-access): There are a couple ways you can securely connect to your home or office NAS over the internet, but I use Synology QuickConnect because it's easy to use and secure enough for me.
 * [What I do with my Synology NAS](#what-i-do-with-my-synology-nas): I'm writing a follow-up article to describe all the things I do with my Synology NAS.
@@ -24,11 +24,13 @@ I recently got a [Synology DS416play](https://www.google.com/search?sxsrf=AB5stB
 
 ![](./synology-nas.png)
 
-## What is a Synology NAS?
+## So what is it?
 
-While [Synology](https://www.synology.com/en-us) makes many different devices, I'm specifically talking about [Synology NAS devices](https://www.synology.com/products?product_line=ds_j%2Cds_plus%2Cds_value%2Cds_xs), or network attached storage. It's a box that contains a few hard drives that you plug into your local network and you can access it from other computers in your house.
+[Synology](https://www.synology.com/en-us) offers a wide range of devices such as surveillance cameras, networking equipment, and NAS devices. In this post I specifically focus on [Synology NAS devices](https://www.synology.com/products?product_line=ds_j%2Cds_plus%2Cds_value%2Cds_xs), or Network Attached Storage. These devices are essentially boxes that house multiple hard drives and can be connected to your local network, enabling access to stored data from other computers within your home or office.
 
-This is one function that my Synology NAS serves. But Synology NAS devices can do a lot more that that thanks to Synology's proprietary software. They're essentially just little computers that you connect to from other computers.
+The primary function of a Synology NAS device is to provide centralized storage for your data. By connecting the device to your local network, you can easily store and retrieve files from any computer within the network.
+
+However, what sets Synology NAS devices apart is their proprietary software, which transforms these devices into versatile computing platforms.
 
 ## DSM (DiskStation Manager)
 
