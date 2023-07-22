@@ -29,9 +29,10 @@ a {
   }
   a:hover {
     color: lighten($color-accent-first, 20%);
-    path {
-      fill: lighten($color-accent-first, 20%);
-    }
+    // WAS ACTING WEIRD IN DARK THEME, APPLYING ONLY TO ICONS IN ARTICLEPREVIEW
+    // path {
+    //   fill: lighten($color-accent-first, 20%);
+    // }
     circle {
       fill: lighten($color-accent-first, 20%);
     }
