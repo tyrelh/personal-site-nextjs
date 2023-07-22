@@ -15,7 +15,7 @@ export default function StickyHeader(props: Props) {
         <Anchor href="/">
           superflux.dev
         </Anchor>
-        {
+        { props?.path?.length > 0 &&
           props?.path.map((pathPiece: string) => (
             <>
               <SwapRightOutlined />
