@@ -5,19 +5,26 @@ $taro: #a29bfe;
 $blue: #3b95e3;
 $cerulean: #0a84e3;
 $aquafresh: #81ecec;
-$chlorine: #00cec9;
+$chlorine: #00dfcf;
 $avocado: #00a874;
 $acid: #e0fc1e;
 $sunnyd: #fdcb6e;
 $siracha: #d63131;
 $monday: #636e72;
 
+
 $color-main-bg: #13151a;
 $color-main-bg-light-theme: #f3f3f4;
-$color-main-text: #dbdbdb;
+$color-main-text: #dbdbdc;
 $color-main-text-light-theme: #242425;
 $color-accent-first: $cerulean;
 $color-accent-second: $purple;
 $color-main-text-disabled: rgba($color-main-text, 0.07);
 $color-main-text-disabled-light-theme: lighten($color-main-text-light-theme, 75%);
 $color-shadow: #00020a;
+$color-hashtag: $chlorine;
+$color-hashtag-hover: lighten($chlorine, 40%);
+$color-hashtag-background: $color-main-text-disabled;
+$color-hashtag-light-theme: darken($chlorine, 4%);
+$color-hashtag-hover-light-theme: lighten($chlorine, 3%);
+$color-hashtag-background-light-theme: darken($color-main-text-disabled, 40%);
