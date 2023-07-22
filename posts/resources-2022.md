@@ -4,7 +4,7 @@ date: "Jan 20 2023"
 author: "Tyrel Delaney"
 excerpt: "Here are the resouces I got value from in 2023. Topics include kids, devops, web dev, and some hardware stuff."
 hero: "/images/posts/resources-2022-hero.jpg"
-tags: "devops nextjs hardware raspberry-pi synology kids"
+tags: "devops nextjs hardware raspberry-pi synology kids webdev"
 ---
 
 # Resources I Found Valuable in 2022

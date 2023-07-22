@@ -4,7 +4,7 @@ date: "May 30, 2020"
 author: "Tyrel Hiebert"
 excerpt: "Here is my journey into creating an automated continuous integration and continuous deployment workflow for a project using GitHub Actions."
 hero: "/images/posts/node-cicd-pipeline-hero.png"
-tags: "github-actions ci/cd typescript aws"
+tags: "github-actions cicd typescript aws automation"
 ---
 # Node CI/CD Pipeline using GitHub Actions & AWS Elastic Bean&shy;stalk
 #### May 30, 2020

@@ -4,7 +4,7 @@ date: "March 23, 2022"
 author: "Tyrel Hiebert"
 excerpt: "Here is a rundown of what I'm learning in 2022, what I'd like to learn in 2022, and some things I know I just wont have time for in 2022."
 hero: "/images/posts/what-im-learning-in-2022.jpg"
-tags: "docker github-actions neovim vpn synology ssl static-site-generators"
+tags: "docker github-actions neovim vpn synology ssl static-site-generators cicd aws"
 ---
 # What I'm Learning in 2022
 #### March 23, 2022

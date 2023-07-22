@@ -4,7 +4,7 @@ date: "May 23, 2020"
 author: "Tyrel Hiebert"
 excerpt: "As part of translating my JavaScript and Node Battlesnake to TypeScript and Deno I wanted to setup continuous integration. It was som much easier than I imagined using GitHub Actions."
 hero: "/images/posts/DenoTestsAndGithubActionsCI.png"
-tags: "javascript typescript node deno github-actions ci/cd"
+tags: "javascript typescript node deno github-actions cicd devops"
 ---
 # Deno Tests and GitHub Actions CI
 #### May 23, 2020
