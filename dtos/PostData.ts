@@ -19,3 +19,7 @@ export interface PostMetadataList {
 export interface PostDataList {
     posts: PostData[]
 }
+
+export interface Tags {
+    [index: string]: number;
+}
