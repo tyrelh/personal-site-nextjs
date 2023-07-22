@@ -1,10 +1,9 @@
-import { PostMetadata, Tags } from "../dtos/PostData";
+import { PostData } from "../dtos/PostData";
 
-
-export const getTagsFromMetadata =(metadata: PostMetadata[]): string[] => {
-  const tags = new Set<string>();
-  metadata.forEach(function (metadatum) {
-    metadatum.tags.forEach(function (tag) {
+export const getTagsFromPostDataList =(postData: PostData[]): string[] => {
+  let tags = new Set<string>();
+  postData.forEach(function (postDatum) {
+    postDatum.tags.forEach(function (tag) {
       tags.add(tag);
     });
   }); 

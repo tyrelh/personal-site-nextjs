@@ -2,7 +2,7 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import { GetStaticProps, GetStaticPropsResult } from "next";
-import { PostMetadata, PostMetadataList } from "../dtos/PostData";
+import { PostData, PostMetadata, PostMetadataList } from "../dtos/PostData";
 import { sortPostsByDate } from "../utils/dateUtils";
 import HeadW from "../components/layout/HeadW";
 import Anchor from "../components/elements/Anchor";
@@ -67,14 +67,15 @@ export const getStaticProps: GetStaticProps = async (
 
     const readTimeInMinutes = calculateReadTimeOfText(content);
 
-    const metadata: PostMetadata = {
+    const metadata: PostData = {
       title: frontmatter?.title,
       slug: slug,
       date: frontmatter?.date,
       hero: frontmatter?.hero,
       excerpt: frontmatter?.excerpt,
       tags: frontmatter?.tags ? frontmatter.tags.split(" ") : null,
-      readTimeInMinutes: readTimeInMinutes
+      readTimeInMinutes: readTimeInMinutes,
+      content: content
     };
     return metadata;
   });

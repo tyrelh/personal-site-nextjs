@@ -1,6 +1,6 @@
 import { List, Tag } from "antd"
 import { CalendarFilled, ReadFilled } from "@ant-design/icons"
-import { PostMetadata } from "../../dtos/PostData"
+import { PostData, PostMetadata } from "../../dtos/PostData"
 import Link from "next/link"
 import Image from "next/image"
 import Anchor from "./Anchor"
@@ -11,7 +11,7 @@ export interface Props {
 }
 
 export default function ArticlePreviewList(props: Props) {
-  const { articleMetadataList } = props
+const { articleMetadataList } = props
   
   return (
     <List
@@ -19,7 +19,7 @@ export default function ArticlePreviewList(props: Props) {
       size="large"
       split={false}
       dataSource={articleMetadataList}
-      renderItem={ (post: PostMetadata) => (
+      renderItem={ (post: PostMetadata | PostData) => (
         <Anchor href={`/blog/${post.slug}`}>
           <List.Item
             key={post.slug}

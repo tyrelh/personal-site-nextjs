@@ -1,10 +1,10 @@
 import matter from "gray-matter";
 import fs from "fs";
 import path from "path";
-import { PostMetadata } from "../dtos/PostData";
+import { PostData, PostMetadata } from "../dtos/PostData";
 import { calculateReadTimeOfText } from "./textUtils";
 
-export const getMetadata = (): PostMetadata[] => {
+export const getPostData = (): PostData[] => {
   // get files from posts dir
   const files = fs.readdirSync(path.join("posts"));
 
@@ -22,14 +22,15 @@ export const getMetadata = (): PostMetadata[] => {
 
     const readTimeInMinutes = calculateReadTimeOfText(content);
 
-    const metadatum: PostMetadata = {
+    const metadatum: PostData = {
       title: frontmatter?.title,
       slug: slug,
       date: frontmatter?.date,
       hero: frontmatter?.hero,
       excerpt: frontmatter?.excerpt,
       tags: frontmatter?.tags ? frontmatter.tags.split(" ") : null,
-      readTimeInMinutes: readTimeInMinutes
+      readTimeInMinutes: readTimeInMinutes,
+      content: content
     };
     return metadatum;
   });

@@ -4,7 +4,7 @@ date: "Feb 1, 2020"
 author: "Tyrel Hiebert"
 excerpt: "I started this project in 2018 to help teach myself better object-oriented programming structure, game update/draw loops, and JavaScript in general. Implemented using the P5.js framework for the draw loop and canvas drawing functionality with nothing else but vanilla JavaScript."
 hero: "/images/posts/lightshift-game-2.png"
-tags: "javascript game-dev p5.js"
+tags: "javascript game-dev p5js"
 ---
 # Light&shy;shift Game
 #### Feb 1, 2020
