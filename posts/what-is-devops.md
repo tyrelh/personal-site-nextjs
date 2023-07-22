@@ -6,8 +6,6 @@ excerpt: "In my role as a software developer at my day job, I’ve been getting 
 hero: "/images/posts/development-cycle.jpg"
 tags: "devops automation github-actions"
 ---
-# What is DevOps?
-#### April 10, 2022
 
 In my role as a software developer at my day job, I’ve been getting more interested in DevOps as a career trajectory. But what does that even mean? Do I even know?
   

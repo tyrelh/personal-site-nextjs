@@ -6,8 +6,6 @@ excerpt: "As part of translating my JavaScript and Node Battlesnake to TypeScrip
 hero: "/images/posts/DenoTestsAndGithubActionsCI.png"
 tags: "javascript typescript node deno github-actions cicd devops"
 ---
-# Deno Tests and GitHub Actions CI
-#### May 23, 2020
 
 During a recent project to convert my JavaScript & Node [Battlesnake](https://play.battlesnake.com/) over to TypeScript & [Deno](https://deno.land/), I decided I would also create a more robust suite of tests for it.
 

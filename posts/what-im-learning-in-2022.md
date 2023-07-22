@@ -6,8 +6,6 @@ excerpt: "Here is a rundown of what I'm learning in 2022, what I'd like to learn
 hero: "/images/posts/what-im-learning-in-2022.jpg"
 tags: "docker github-actions neovim vpn synology ssl static-site-generators cicd aws"
 ---
-# What I'm Learning in 2022
-#### March 23, 2022
 
 Here are some things that I'd like to learn more about in 2022. This is kindof a reference for myself. So I can look back at this next year and reflect on what I learned and what I wanted to learn. [Let me know on twitter](https://twitter.com/tyreldelaney) if you are learning these same things or you have any tips or resources to share!
 

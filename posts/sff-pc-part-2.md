@@ -6,8 +6,6 @@ excerpt: "This second part of my small form factor gaming PC build covers my upg
 hero: "/images/posts/sff-pc-part-2-6.jpeg"
 tags: "pc gaming hardware"
 ---
-# Small Form Factor PC Part 2 - Water Cooling
-#### Jan 25, 2021
 
 This is a continuation of my small form factor PC build. [Part 1 was getting the major components installed and the computer running](https://superflux.dev/blog/sff-pc-part-1), and part 2 is adding water cooling for the CPU and GPU. You can add to the discussion if you like on [Reddit](https://www.reddit.com/r/sffpc/comments/l56xdr/metalfish_s5_5800x_3080_barrow_pumpblock_first/).
 

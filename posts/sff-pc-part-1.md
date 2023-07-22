@@ -6,8 +6,6 @@ excerpt: "My first small form factor gaming PC and my second proper gaming PC. T
 hero: "/images/posts/sff-pc-part-1-5.jpg"
 tags: "pc gaming hardware"
 ---
-# Small Form Factor PC Build Part 1
-#### Jan 2, 2021
 
 This article I originally [posted to the SFFPC subreddit](https://www.reddit.com/r/sffpc/comments/kpc0ul/part_1_of_my_first_sff_build_metalfish_s5_case/).
 

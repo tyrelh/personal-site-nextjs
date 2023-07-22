@@ -7,8 +7,6 @@ hero: "/images/posts/resources-2022-hero.jpg"
 tags: "devops nextjs hardware raspberry-pi synology kids webdev"
 ---
 
-# Resources I Found Valuable in 2022
-
 My defining event in 2022 was the birth of our first child in Dec 2022.
 
 Here are the resources I found interesting. Some related to kids, some related to other pursuits like DevOps, web development, and some hardware stuff.

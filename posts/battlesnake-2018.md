@@ -6,8 +6,6 @@ excerpt: "Battlesnake is a programming competition where participants create an 
 hero: "/images/posts/Battlesnake2018-1.jpg"
 tags: "python ai events battlesnake"
 ---
-# Battle&shy;snake Program&shy;ming Compe&shy;tition 2018
-#### June 11, 2018
 
 ![Battle snake logo on purple background](Battlesnake2018-1.jpg)
 

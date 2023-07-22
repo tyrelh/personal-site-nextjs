@@ -7,8 +7,6 @@ hero: "/images/posts/synology-nas.png"
 tags: "synology nas data-ownership hardware"
 ---
 
-# What is a Synology NAS?
-
 ## Tl;dr
 
 * [Preamble](#preamble): I got a Synology NAS.

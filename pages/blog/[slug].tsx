@@ -12,6 +12,9 @@ import { PostData } from "../../dtos/PostData";
 import HeadW from "../../components/layout/HeadW";
 import { getOptions, renderer } from "../../utils/markedUtils"
 import StickyHeader from "../../components/elements/StickyHeader";
+import Anchor from "../../components/elements/Anchor";
+import Hashtag from "../../components/elements/Hashtag";
+import { CalendarFilled, ReadFilled } from "@ant-design/icons"
 
 marked.setOptions(getOptions());
 marked.use({ renderer });
@@ -21,6 +24,17 @@ export default function PostPage(post: PostData) {
     <>
       <HeadW title={post.title} />
       <StickyHeader title={post.title} path="blog"/>
+      <h1>{post.title}</h1>
+      {post?.date &&
+          <h4><CalendarFilled /> {post.date}</h4>
+      }
+      <p>
+        {post.tags.map((tag: string) => (
+          <Anchor href={`/blog/tags/${tag}`}>
+            <Hashtag tag={tag}/>
+          </Anchor>
+        ))}
+      </p>
       <div dangerouslySetInnerHTML={{ __html: marked.parse(post.content) }}></div>
     </>
   );

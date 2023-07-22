@@ -6,8 +6,7 @@ excerpt: "A dynamic DNS is handy if you want to host something or access somethi
 hero: "/images/posts/aws-ddns.jpg"
 tags: "aws ddns node raspberry-pi infrastructure"
 ---
-# AWS Dynamic DNS
-#### March 20, 2022
+
 This is a Dynamic DNS system built using AWS Route53 and a Node script running on a Raspberry Pi.
 
 ![](./aws-ddns.jpg)

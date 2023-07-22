@@ -6,8 +6,6 @@ excerpt: "After becoming infatuated with custom mechanical keyboards I decided t
 hero: "/images/posts/MechanicalKeyboard-12.jpg"
 tags: "mechanical-keyboards arduino c++ hardware"
 ---
-# Building a Mechani&shy;cal Keyboard from Scratch
-#### Apr 20, 2017
 
 ![Top view of keyboard with acrylic case and purple glowing LEDs](MechanicalKeyboard-12.jpg)
 
