@@ -14,7 +14,7 @@ import { getOptions, renderer } from "../../utils/markedUtils"
 import StickyHeader from "../../components/elements/StickyHeader";
 import Anchor from "../../components/elements/Anchor";
 import Hashtag from "../../components/elements/Hashtag";
-import { CalendarFilled, ReadFilled } from "@ant-design/icons"
+import { CalendarOutlined } from "@ant-design/icons"
 
 marked.setOptions(getOptions());
 marked.use({ renderer });
@@ -23,10 +23,10 @@ export default function PostPage(post: PostData) {
   return (
     <>
       <HeadW title={post.title} />
-      <StickyHeader title={post.title} path="blog"/>
+      <StickyHeader title={post.title} path={["blog"]}/>
       <h1>{post.title}</h1>
       {post?.date &&
-          <h4><CalendarFilled /> {post.date}</h4>
+          <h4><CalendarOutlined /> {post.date}</h4>
       }
       <p>
         {post.tags.map((tag: string) => (
