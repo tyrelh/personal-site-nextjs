@@ -2,21 +2,19 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import { marked } from "marked";
-import Link from "next/link";
 import {
   GetStaticPaths,
   GetStaticPathsResult,
   GetStaticProps,
   GetStaticPropsResult,
 } from "next/types";
-import { PostData, PostMetadataList } from "../../dtos/PostData";
+import { PostData } from "../../dtos/PostData";
 import HeadW from "../../components/layout/HeadW";
-import Anchor from "../../components/elements/Anchor";
 import { getOptions, renderer } from "../../utils/markedUtils"
 import StickyHeader from "../../components/elements/StickyHeader";
 
-marked.setOptions(getOptions())
-marked.use({ renderer })
+marked.setOptions(getOptions());
+marked.use({ renderer });
 
 export default function PostPage(post: PostData) {
   return (
@@ -28,33 +26,28 @@ export default function PostPage(post: PostData) {
   );
 }
 
+// get filenames of posts, use filesnames to generate paths
 export const getStaticPaths: GetStaticPaths =
   async (): Promise<GetStaticPathsResult> => {
     const files = fs.readdirSync(path.join("posts"));
-
     const paths = files.map((filename) => ({
       params: {
-        slug: filename.replace(".md", ""),
+        slug: filename.replace(".md", "")
       },
     }));
-
     return {
       paths: paths,
-      fallback: false,
+      fallback: false
     };
   };
   
-
-export const getStaticProps: GetStaticProps = async ({
-  params: { slug },
-}): Promise<GetStaticPropsResult<PostData>> => {
+// get post data for a given slug (filename)
+export const getStaticProps: GetStaticProps = async ({ params: { slug } }): Promise<GetStaticPropsResult<PostData>> => {
   const markdownWithMeta = fs.readFileSync(
     path.join("posts", slug + ".md"),
     "utf-8"
   );
-
   const { data: frontmatter, content } = matter(markdownWithMeta);
-
   const postData: PostData = {
     title: frontmatter?.title,
     slug: slug as string,
@@ -62,12 +55,9 @@ export const getStaticProps: GetStaticProps = async ({
     excerpt: frontmatter?.excerpt,
     hero: frontmatter?.hero,
     tags: frontmatter?.tags ? frontmatter.tags.split(" ") : null,
-    content: content,
+    content: content
   };
-
   return {
-    props: {
-      ...postData,
-    },
+    props: { ...postData }
   };
 };

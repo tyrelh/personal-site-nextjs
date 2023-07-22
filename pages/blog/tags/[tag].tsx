@@ -1,6 +1,4 @@
-import { GetStaticPaths, GetStaticPathsResult, GetStaticProps, GetStaticPropsResult } from "next"
-import path from "path"
-import fs from "fs";
+import { GetStaticPaths, GetStaticPathsResult } from "next"
 import { getPostData } from "../../../utils/articleFileUtils"
 import { PostData } from "../../../dtos/PostData";
 import { getTagsFromPostDataList } from "../../../utils/tagUtils";
@@ -24,6 +22,7 @@ export default function TagPage({tag, postsForTag}) {
   )
 }
 
+// get articles for a given tag
 export async function getStaticProps({ params }: Params) {
   const postDataList: PostData[] = getPostData();
   const postsForTag: PostData[] = postDataList.filter((post: PostData) => 
@@ -37,16 +36,13 @@ export async function getStaticProps({ params }: Params) {
   }
 }
 
-export const getStaticPaths: GetStaticPaths = async (
-  context
-): Promise<GetStaticPathsResult> => {
+// get unique tags to generate tag page paths
+export const getStaticPaths: GetStaticPaths = async (context): Promise<GetStaticPathsResult> => {
   const postData: PostData[] = getPostData();
   const tags = getTagsFromPostDataList(postData);
   console.log("Tags: ", tags);
   const paths = tags.map((tag: string) => ({
-    params: {
-      tag,
-    },
+    params: { tag }
   }));
   return {
     paths: paths,

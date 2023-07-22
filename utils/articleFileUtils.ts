@@ -1,7 +1,7 @@
 import matter from "gray-matter";
 import fs from "fs";
 import path from "path";
-import { PostData, PostMetadata } from "../dtos/PostData";
+import { PostData } from "../dtos/PostData";
 import { calculateReadTimeOfText } from "./textUtils";
 
 export const getPostData = (): PostData[] => {
@@ -9,7 +9,7 @@ export const getPostData = (): PostData[] => {
   const files = fs.readdirSync(path.join("posts"));
 
   // get slug and frontmatter from posts
-  const metadata = files.map((filename) => {
+  const postDataList: PostData[] = files.map((filename) => {
     // create slug
     const slug = filename.replace(".md", "");
 
@@ -22,7 +22,7 @@ export const getPostData = (): PostData[] => {
 
     const readTimeInMinutes = calculateReadTimeOfText(content);
 
-    const metadatum: PostData = {
+    const postData: PostData = {
       title: frontmatter?.title,
       slug: slug,
       date: frontmatter?.date,
@@ -32,8 +32,8 @@ export const getPostData = (): PostData[] => {
       readTimeInMinutes: readTimeInMinutes,
       content: content
     };
-    return metadatum;
+    return postData;
   });
 
-  return metadata
+  return postDataList
 }
