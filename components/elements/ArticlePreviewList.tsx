@@ -1,5 +1,5 @@
 import { List, Tag } from "antd"
-import { CalendarFilled, ReadFilled } from "@ant-design/icons"
+import { CalendarOutlined, ReadOutlined } from "@ant-design/icons"
 import { PostData, PostMetadata } from "../../dtos/PostData"
 import Link from "next/link"
 import Image from "next/image"
@@ -37,7 +37,7 @@ const { articleMetadataList } = props
             {
               post?.date &&
                 <h4>
-                  <CalendarFilled /> {post.date}  <ReadFilled className="readtime-icon" /> {post.readTimeInMinutes} Minute Read
+                  <CalendarOutlined /> {post.date}  <ReadOutlined className="readtime-icon" /> {post.readTimeInMinutes} Minute Read
                 </h4>
             }
             <p className="article-preview-excerpt">
