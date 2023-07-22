@@ -8,16 +8,23 @@ import { sortPostsByDate } from "../../../utils/dateUtils";
 import HeadW from "../../../components/layout/HeadW";
 import StickyHeader from "../../../components/elements/StickyHeader";
 import SectionHeading from "../../../components/elements/SectionHeading";
+import Anchor from "../../../components/elements/Anchor";
 
 export default function TagPage({tag, postsForTag}) {
   return (
     <>
       <HeadW title="superflux" />
-      <StickyHeader />
+      <StickyHeader title={tag} path="blog/tags"/>
       <SectionHeading>
         #{tag}
       </SectionHeading>
       <ArticlePreviewList articleMetadataList={postsForTag} />
+      <SectionHeading>
+        Get in touch
+      </SectionHeading>
+      <p>
+        Feel free to contact me via <Anchor href="https://twitter.com/tyreldelaney">Twitter</Anchor>!
+      </p>
     </>
   )
 }
