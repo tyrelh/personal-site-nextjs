@@ -4,6 +4,7 @@ import { PostData, PostMetadata } from "../../dtos/PostData"
 import Link from "next/link"
 import Image from "next/image"
 import Anchor from "./Anchor"
+import Hashtag from "./Hashtag"
 
 
 export interface Props {
@@ -46,7 +47,10 @@ const { articleMetadataList } = props
               post?.tags?.length &&
               <p>
                 {post.tags.map((tag: string) => (
-                  <Tag key={tag}>{tag}</Tag>
+                  <Anchor href={`/blog/tags/${tag}`}>
+                    <Hashtag tag={tag}/>
+                  </Anchor>
+                
                 ))}
               </p>
             }
