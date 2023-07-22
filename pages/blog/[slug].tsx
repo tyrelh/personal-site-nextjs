@@ -30,7 +30,7 @@ export default function PostPage(post: PostData) {
       }
       <p>
         {post.tags.map((tag: string) => (
-          <Anchor href={`/blog/tags/${tag}`}>
+          <Anchor key={tag} href={`/blog/tags/${tag}`}>
             <Hashtag tag={tag}/>
           </Anchor>
         ))}
