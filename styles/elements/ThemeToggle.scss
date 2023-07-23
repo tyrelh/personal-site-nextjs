@@ -33,12 +33,14 @@
     }
 
     .sun-icon {
-      fill: $color-main-text;
+      // fill: $color-main-text;
+      stroke: $color-main-text;
       // fill: $color-main-text-light-theme;
     }
 
     .moon-icon {
       fill: $color-main-text-light-theme;
+      stroke: $color-main-text-light-theme;
       // fill: $color-main-text;
     }
   }
