@@ -5,23 +5,15 @@ import { PostData } from "../dtos/PostData";
 import { calculateReadTimeOfText } from "./textUtils";
 
 export const getPostData = (): PostData[] => {
-  // get files from posts dir
   const files = fs.readdirSync(path.join("posts"));
-
-  // get slug and frontmatter from posts
   const postDataList: PostData[] = files.map((filename) => {
-    // create slug
     const slug = filename.replace(".md", "");
-
-    // get frontmatter
     const markdownWithMeta = fs.readFileSync(
       path.join("posts", filename),
       "utf-8"
     );
     const { data: frontmatter, content } = matter(markdownWithMeta);
-
     const readTimeInMinutes = calculateReadTimeOfText(content);
-
     const postData: PostData = {
       title: frontmatter?.title,
       slug: slug,
@@ -34,6 +26,5 @@ export const getPostData = (): PostData[] => {
     };
     return postData;
   });
-
   return postDataList
 }
