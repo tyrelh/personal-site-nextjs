@@ -26,7 +26,7 @@ export default function TagPage({tag, postsForTag}) {
         Feel free to contact me via <Anchor href="https://twitter.com/tyreldelaney">Twitter</Anchor>!
       </p>
     </>
-  )
+  );
 }
 
 // get articles for a given tag
