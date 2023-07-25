@@ -47,10 +47,7 @@ const { articleMetadataList } = props
               post?.tags?.length &&
               <p>
                 {post.tags.map((tag: string) => (
-                  <Anchor key={tag} href={`/blog/tags/${tag}`}>
-                    <Hashtag tag={tag}/>
-                  </Anchor>
-                
+                  <Hashtag tag={tag}/>
                 ))}
               </p>
             }

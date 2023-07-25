@@ -1,4 +1,5 @@
 import { Tag } from "antd"
+import Anchor from "./Anchor"
 
 export interface Props {
   tag: string
@@ -6,6 +7,8 @@ export interface Props {
 
 export default function Hashtag(props: Props) {
   return (
-    <Tag key={props.tag}>#{props.tag}</Tag>
+    <Anchor key={props.tag} href={`/blog/tags/${props.tag}`}>
+      <Tag key={props.tag}>#{props.tag}</Tag>
+    </Anchor>
   )
 }

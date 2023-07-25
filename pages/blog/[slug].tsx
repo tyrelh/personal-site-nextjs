@@ -30,9 +30,7 @@ export default function PostPage(post: PostData) {
       }
       <p>
         {post.tags.map((tag: string) => (
-          <Anchor key={tag} href={`/blog/tags/${tag}`}>
-            <Hashtag tag={tag}/>
-          </Anchor>
+          <Hashtag tag={tag}/>
         ))}
       </p>
       <div dangerouslySetInnerHTML={{ __html: marked.parse(post.content) }}></div>
