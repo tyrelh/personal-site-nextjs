@@ -47,7 +47,7 @@ const { articleMetadataList } = props
               post?.tags?.length &&
               <p>
                 {post.tags.map((tag: string) => (
-                  <Hashtag tag={tag}/>
+                  <Hashtag key={tag} tag={tag}/>
                 ))}
               </p>
             }

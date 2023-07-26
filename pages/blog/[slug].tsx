@@ -30,7 +30,7 @@ export default function PostPage(post: PostData) {
       }
       <p>
         {post.tags.map((tag: string) => (
-          <Hashtag tag={tag}/>
+          <Hashtag key={tag} tag={tag}/>
         ))}
       </p>
       <div dangerouslySetInnerHTML={{ __html: marked.parse(post.content) }}></div>
