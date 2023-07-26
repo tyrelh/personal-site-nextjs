@@ -9,7 +9,7 @@ tags: "github-pages nextjs react static-site-generators typescript"
 
 Let's say you've built an nice new static site using Next.js and you want to host it on GitHub Pages. Well there's a few steps to get it working, but it isn't too hard.
 
-![alt](NextJSGitHubPagesHero.png)
+![next js logo and github logo](./NextJSGitHubPagesHero.png)
 
 This article assumes you already have a website built locally and you're just looking to host it on [GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages). In the future I may write some how-tos for creating a blog using markdown and Next.js.
 
@@ -24,9 +24,9 @@ You can also use this tutorial to push repo-specific pages. Google for that if y
 * [Branch setup](#branch-setup): I use two repositories on GitHub, one for my source code and one that is the Pages repository that gets hosted under your username.
 * [Deploy script](#deploy-script): The deploy script uses the *gh-pages* package.
 	* [Static content directory](#static-content-directory): Set the *out* directory in the deploy script that Next.js outputs static assets to when building and exporting.
-	* [Remote & branch](#remote-branch): Set the remote and the branch that you want *gh-pages* to push your static assets to.
+	* [Remote & branch](#remote--branch): Set the remote and the branch that you want *gh-pages* to push your static assets to.
 	* [Force push to remote](#force-push-to-remote): Allow the deploy script to force-push changes to your GitHub Pages repo.
-	* [\_next hidden folder](#next-hidden-folder): Some tweaks to make GitHub Pages play nicely with Next.js
+	* [\_next hidden folder](#_next-hidden-folder): Some tweaks to make GitHub Pages play nicely with Next.js
 * [\[Optional\] Configure a custom domain](#optional-configure-a-custom-domain): Allow a GitHub Pages site to be served over a custom domain name.
 * [Resources](#resources)
 * [Conclusion](#conclusion)
