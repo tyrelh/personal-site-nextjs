@@ -13,13 +13,13 @@ This is a follow-up to my [previous post describing what a Synology NAS is](http
 
 [What I do with my Synology NAS](#what-i-do-with-my-synology-nas)
 [Apps](#apps): The apps and services I use most often on my Synology.
-	[Photo Library](#photo-library-think-icloud-or-google-photos): Think iCloud Photos or Google Photos. A great photo library app that also syncs your phones camera roll.
+	[Photo Library](#photo-library-think-icloud-photos-or-google-photos): Think iCloud Photos or Google Photos. A great photo library app that also syncs your phones camera roll.
 	[Lightroom](#lightroom): I store my Lightroom catalogs on my NAS.
 		[Storing photos on your network drive](#storing-lightroom-raw-files-on-your-synology-nas)
 		[Storing Lightroom catalog files on your Synology](#storing-lightroom-catalog-files-on-your-synology)
-	[File storage](#file-storate): I do also use my NAS as a normal NAS.
-	[Obsidian](#obsidian): Obsidian is a markdown notetaking app. I use the Synology Drive app to sync my notebooks across all devices, even over the internet.
-	[Video](#video): I use Plex to watch some movies and TV shows on my TV.
+	[File storage](#file-storage): I do also use my NAS as a normal NAS.
+	[Obsidian](#obsidian-think-notion-or-apple-notes): Obsidian is a markdown notetaking app. I use the Synology Drive app to sync my notebooks across all devices, even over the internet. Think Notion, or Apple Notes.
+	[Video](#video-plex): I use Plex to watch some movies and TV shows on my TV.
 [Backups](#backups): Most of the data I store on my Synology NAS is only stored there. So although the RAID array gives some piece of mind, I also do full volume backups to AWS S3.
 [RAM upgrade](#ram-upgrade): I upgraded from 1GB to 8GB of RAM.
 [Conclusion](#so-what-do-i-think-about-my-synology-nas): I couldn't live without it now. It is my personal cloud that stores and lets me access my photos and notes amongst other things, in a platform and OS agnostic way.
