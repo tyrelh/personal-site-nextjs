@@ -62,7 +62,7 @@ This took me a bit to figure out as it's not as simple to setup as the Photos ap
 
 [Spacerex](https://www.youtube.com/@SpaceRexWill/featured) does [a great tutorial on this setup](https://youtu.be/knP9GiE8IFk), but here are the highlights:
 
-#### Storing Lightroom raw files on your Synology NAS
+### Storing Lightroom raw files on your Synology NAS
 
 First you'll need to [enable SMB from within the Control Panel in DSM](https://kb.synology.com/en-ca/DSM/help/SMBService/smbservice_smb_settings?version=7). This will allow you to access your Synology as a network drive natively in Windows and MacOS.
 
@@ -74,7 +74,7 @@ Remember, if you are just moving your photos to your Synology, then it's not a b
 
 So now your photos are on your Synology, and really that's the most important thing. But your Lightroom catalog files are still on your computer. This might be fine for you, but if you want to go one step further you van sync those files to your Synology using [Synology Drive](https://www.synology.com/en-global/dsm/feature/drive).
 
-#### Storing Lightroom catalog files on your Synology
+### Storing Lightroom catalog files on your Synology
 
 I'm specifically talking about Lightroom Classic here. I like to avoid using Adobe's online services whenever I can as I don't want to loose access to my Lightroom library. Whenever I say "Lightroom" I mean Lightroom Classic.
 
