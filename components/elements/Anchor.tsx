@@ -11,9 +11,9 @@ export default function Anchor(props: Props) {
       case "/":
         return (
           <Link href={props.href}>
-            <a>
+            {/* <a> */}
               { props.children }
-            </a>
+            {/* </a> */}
           </Link>
         );
       default:

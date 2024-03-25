@@ -21,7 +21,7 @@ const { articleMetadataList } = props
       split={false}
       dataSource={articleMetadataList}
       renderItem={ (post: PostMetadata | PostData) => (
-        <Anchor href={`/blog/${post.slug}`}>
+        // <Anchor href={`/blog/${post.slug}`}>
           <List.Item
             key={post.slug}
             extra={
@@ -52,7 +52,7 @@ const { articleMetadataList } = props
               </p>
             }
           </List.Item>
-        </Anchor>
+        // </Anchor>
       )}
     />
   )
