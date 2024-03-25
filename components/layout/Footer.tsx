@@ -13,7 +13,7 @@ export default function Footer() {
           <Link href="/">Return to homepage</Link>
         </p>
         <p>
-          Made with <ThunderboltFilled /> by Tyrel Hiebert   <Anchor href="https://twitter.com/tyreldelaney"><TwitterOutlined /></Anchor>  <Anchor href="https://github.com/tyrelh"><GithubFilled /></Anchor>  <Anchor href="https://www.linkedin.com/in/tyrelhiebert/"><LinkedinLogoIcon /></Anchor><br/>
+          Made with <ThunderboltFilled /> by Tyrel Delaney   <Anchor href="https://github.com/tyrelh"><GithubFilled /></Anchor>  <Anchor href="https://www.linkedin.com/in/tyrelhiebert/"><LinkedinLogoIcon /></Anchor><br/>
         </p>
       </Space>
       <p>
