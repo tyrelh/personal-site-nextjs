@@ -11,6 +11,15 @@ body, p {
   font-feature-settings: "ss02" on,"ss01" on;
 }
 
+.ant-layout-content {
+  color: $color-main-text;
+}
+.light-mode {
+  .ant-layout-content {
+    color: $color-main-text-light-theme;
+  }
+}
+
 
 h1 {
   font-family: $font-header;
