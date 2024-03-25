@@ -2,35 +2,35 @@
 // https://marked.js.org/using_pro#renderer
 
 export const renderer = {
-  image(href, title, text) {
+  image(href: string, title: string, text: string) {
     const nonRelativeHref = "/images/posts/" + href
     return `
         <img src="${nonRelativeHref}" alt="${title}" class="article-image" />
     `
   },
-  heading(text, level, raw, slugger) {
+  heading(text: string, level: number, raw: string) {
     let component = ""
     switch(level) {
       case 1:
         component = `
-          <h1 id="${slugger.slug(raw)}">${text}</h1>
+          <h1 id="${raw}">${text}</h1>
         `
         break
       case 2:
         component = `
-          <h2 id="${slugger.slug(raw)}">
+          <h2 id="${raw}">
             <span class="underline">${text}</span>
           </h2>
         `
         break
       case 3:
         component = `
-          <h3 id="${slugger.slug(raw)}">${text}</h3>
+          <h3 id="${raw}">${text}</h3>
         `
         break
       case 4:
         component = `
-          <h4 id="${slugger.slug(raw)}">${text}</h4>
+          <h4 id="${raw}">${text}</h4>
         `
         break
     }
