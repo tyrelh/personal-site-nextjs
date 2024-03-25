@@ -37,10 +37,3 @@ export const renderer = {
     return component
   }
 }
-
-export function getOptions() {
-  const options = {
-    baseUrl: "/images/posts/"
-  }
-  return options
-}

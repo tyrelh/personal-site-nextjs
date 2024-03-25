@@ -10,13 +10,11 @@ import {
 } from "next/types";
 import { PostData } from "../../dtos/PostData";
 import HeadW from "../../components/layout/HeadW";
-import { getOptions, renderer } from "../../utils/markedUtils"
+import { renderer } from "../../utils/markedUtils"
 import StickyHeader from "../../components/elements/StickyHeader";
-import Anchor from "../../components/elements/Anchor";
 import Hashtag from "../../components/elements/Hashtag";
 import { CalendarOutlined } from "@ant-design/icons"
 
-marked.setOptions(getOptions());
 marked.use({ renderer });
 
 export default function PostPage(post: PostData) {
