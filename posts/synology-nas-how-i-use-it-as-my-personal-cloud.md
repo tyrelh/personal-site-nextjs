@@ -4,7 +4,7 @@ date: "August 15, 2023"
 author: "Tyrel Delaney"
 excerpt: "This is a follow-up to my previous post describing what a Synology NAS is. In this post I describe some of the more interesting functionality that I use every day."
 hero: "/images/posts/synology-dsm-desktop.png"
-tags: "synology nas data-ownership hardware photos note-taking obsidian plex"
+tags: "synology nas data-ownership hardware photos note-taking obsidian plex lightroom"
 ---
 
 This is a follow-up to my [previous post describing what a Synology NAS is](https://superflux.dev/blog/synology-nas-what-is-it). In this post I describe some of the more interesting functionality that I use every day.
