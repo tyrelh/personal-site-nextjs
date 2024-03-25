@@ -1,8 +1,8 @@
-import { GetStaticPaths, GetStaticPathsResult } from "next"
+import { GetStaticPaths, GetStaticPathsResult, GetStaticProps,
+  GetStaticPropsResult } from "next"
 import { getPostData } from "../../../utils/articleFileUtils"
 import { PostData } from "../../../dtos/PostData";
 import { getTagsFromPostDataList } from "../../../utils/tagUtils";
-import { Params } from "next/dist/server/router";
 import ArticlePreviewList from "../../../components/elements/ArticlePreviewList";
 import { sortPostsByDate } from "../../../utils/dateUtils";
 import HeadW from "../../../components/layout/HeadW";
@@ -30,14 +30,14 @@ export default function TagPage({tag, postsForTag}) {
 }
 
 // get articles for a given tag
-export async function getStaticProps({ params }: Params) {
+export const getStaticProps: GetStaticProps = async ({ params: { tag } }): Promise<GetStaticPropsResult<any>> => {
   const postDataList: PostData[] = getPostData();
   const postsForTag: PostData[] = postDataList.filter((post: PostData) => 
-    post.tags.includes(params.tag)
+    post.tags.includes(tag as string)
   );
   return {
     props: {
-      tag: params.tag,
+      tag: tag,
       postsForTag: postsForTag.sort(sortPostsByDate)
     },
   }
