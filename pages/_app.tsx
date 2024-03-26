@@ -6,7 +6,7 @@ import Script from "next/script";
 
 const { Content } = Layout;
 
-function MyApp({ Component, pageProps }: AppProps) {
+function App({ Component, pageProps }: AppProps) {
   
   return (
     <>
@@ -30,5 +30,5 @@ function MyApp({ Component, pageProps }: AppProps) {
   );
 }
 
-export default MyApp;
+export default App;
 
