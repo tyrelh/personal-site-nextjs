@@ -4,12 +4,13 @@ import path from "path";
 import { PostData } from "../dtos/PostData";
 import { calculateReadTimeOfText } from "./textUtils";
 
-export const getPostData = (): PostData[] => {
-  const files = fs.readdirSync(path.join("posts"));
+export const getPostData = (dir: string = ""): PostData[] => {
+  const directory = dir ? dir : "posts";
+  const files = fs.readdirSync(path.join(directory));
   const postDataList: PostData[] = files.map((filename) => {
     const slug = filename.replace(".md", "");
     const markdownWithMeta = fs.readFileSync(
-      path.join("posts", filename),
+      path.join(directory, filename),
       "utf-8"
     );
     const { data: frontmatter, content } = matter(markdownWithMeta);
