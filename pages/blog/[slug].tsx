@@ -19,7 +19,7 @@ marked.use({ renderer });
 
 export default function PostPage(post: PostData) {
   return (
-    <>
+    <div data-pagefind-body>
       <HeadW title={post.title} />
       <StickyHeader title={post.title} path={["blog"]}/>
       <h1>{post.title}</h1>
@@ -32,7 +32,7 @@ export default function PostPage(post: PostData) {
         ))}
       </p>
       <div dangerouslySetInnerHTML={{ __html: marked.parse(post.content) }}></div>
-    </>
+    </div>
   );
 }
 
