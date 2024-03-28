@@ -12,7 +12,7 @@ export const createSearchIndex = (postDataList: PostData[]): Map<string, Set<str
       tagTokens.forEach((token: string) => {
         const nGrams = createNGrams(token);
         nGrams.forEach((nGram: string) => {
-          addToIndex(searchIndex, nGram, post.slug);
+          addToIndex(searchIndex, nGram, post);
         });
       });
     });
@@ -22,7 +22,7 @@ export const createSearchIndex = (postDataList: PostData[]): Map<string, Set<str
     titleTokens.forEach((token: string) => {
       const nGrams = createNGrams(token);
       nGrams.forEach((nGram: string) => {
-        addToIndex(searchIndex, nGram, post.slug);
+        addToIndex(searchIndex, nGram, post);
       });
     });
 
@@ -31,7 +31,7 @@ export const createSearchIndex = (postDataList: PostData[]): Map<string, Set<str
     excerptTokens.forEach((token: string) => {
       const nGrams = createNGrams(token);
       nGrams.forEach((nGram: string) => {
-        addToIndex(searchIndex, nGram, post.slug);
+        addToIndex(searchIndex, nGram, post);
       });
     });
     
@@ -39,7 +39,8 @@ export const createSearchIndex = (postDataList: PostData[]): Map<string, Set<str
   return searchIndex;
 }
 
-const addToIndex = (searchIndex: Map<string, Set<string>>, key: string, value: string) => {
+const addToIndex = (searchIndex: Map<string, Set<string>>, key: string, post: PostData) => {
+  const value = JSON.stringify({"title": post.title, "slug": post.slug});
   if (!searchIndex.has(key)) {
     searchIndex.set(key, new Set());
   }
@@ -90,13 +91,14 @@ const startTime = performance.now();
 const postDataList: PostData[] = getPostData("./posts");
 // console.log("Post Data List: ", postDataList);
 const searchIndex: Map<string, Set<string>> = createSearchIndex(postDataList);
+console.log("Search Index: ", searchIndex);
 const searchIndexJsonString = convertMapToJson(searchIndex);
-fs.writeFileSync("./public/search-index.json", searchIndexJsonString, "utf8");
-console.log("Search index saved to /search-index/search-index.json");
+const searchIndexLocation = "./components/elements/search-index.json";
+fs.writeFileSync(searchIndexLocation, searchIndexJsonString, "utf8");
+console.log(`Search index saved to ${searchIndexLocation}`);
 
 const endTime = performance.now();
 
-// console.log("Search Index: ", searchIndex);
 console.log("Posts: ", postDataList.length);
 console.log("Search Index size: ", searchIndex.size);
 const sizeInBytes = estimateJsonStringByteSize(searchIndexJsonString);
