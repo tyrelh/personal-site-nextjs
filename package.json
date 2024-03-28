@@ -4,10 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && npm run compile-search-index",
     "start": "next start",
     "lint": "next lint",
-    "deploy": "echo 'superflux.dev' > ./out/CNAME && echo 'true' > ./out/.nojekyll && gh-pages -d out -b master -r https://github.com/tyrelh/tyrelh.github.io.git -f -t"
+    "deploy": "echo 'superflux.dev' > ./out/CNAME && echo 'true' > ./out/.nojekyll && gh-pages -d out -b master -r https://github.com/tyrelh/tyrelh.github.io.git -f -t",
+    "compile-search-index": "tsc -p ./preprocessors/search-index/ && node ./preprocessors/search-index/out/preprocessors/search-index/search-index.js"
   },
   "dependencies": {
     "@types/node": "^20.11.30",
