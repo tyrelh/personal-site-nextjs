@@ -1,5 +1,6 @@
 import { PostData } from "../../dtos/PostData";
 import { getPostData } from "../../utils/articleFileUtils";
+import * as fs from "fs";
 
 export const createSearchIndex = (postDataList: PostData[]): Map<string, Set<string>> => {
   const searchIndex: Map<string, Set<string>> = new Map();
@@ -69,29 +70,35 @@ export const createNGrams = (token: string): Set<string> => {
   return nGrams;
 }
 
-function estimateJsonByteSize(map: Map<string, Set<string>>): number {
+const convertMapToJson = (map: Map<string, Set<string>>): string => {
   const obj: { [key: string]: string[] } = {};
   // Convert Map to plain object
   map.forEach((value, key) => {
       obj[key] = Array.from(value);
   });
-  const jsonString = JSON.stringify(obj);
-  // Assuming 1 character is approximately 1 byte (which is not always true due to UTF-8 encoding, etc.)
-  const byteSize = jsonString.length * 2; // JavaScript strings are UTF-16 encoded, so we multiply by 2
-  return byteSize;
+  return JSON.stringify(obj);
 }
+
+const estimateJsonStringByteSize = (jsonString: string): number => {
+  // Assuming 1 character is approximately 1 byte (which is not always true due to UTF-8 encoding, etc.)
+  return jsonString.length * 2; // JavaScript strings are UTF-16 encoded, so we multiply by 2
+}
+
 
 const startTime = performance.now();
 
-const postDataList: PostData[] = getPostData("../../posts");
+const postDataList: PostData[] = getPostData("./posts");
 // console.log("Post Data List: ", postDataList);
 const searchIndex: Map<string, Set<string>> = createSearchIndex(postDataList);
+const searchIndexJsonString = convertMapToJson(searchIndex);
+fs.writeFileSync("./public/search-index.json", searchIndexJsonString, "utf8");
+console.log("Search index saved to /search-index/search-index.json");
 
 const endTime = performance.now();
 
 // console.log("Search Index: ", searchIndex);
 console.log("Posts: ", postDataList.length);
 console.log("Search Index size: ", searchIndex.size);
-const sizeInBytes = estimateJsonByteSize(searchIndex);
+const sizeInBytes = estimateJsonStringByteSize(searchIndexJsonString);
 console.log("Estimated JSON KB size:", Number(sizeInBytes/1000).toFixed(1), "KB");
 console.log("Time to parse posts: ", Number(endTime - startTime).toFixed(1), "ms");
