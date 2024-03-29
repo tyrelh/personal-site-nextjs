@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && npm run compile-search-index",
+    "build": "npm run compile-search-index && next build",
     "start": "next start",
     "lint": "next lint",
     "deploy": "echo 'superflux.dev' > ./out/CNAME && echo 'true' > ./out/.nojekyll && gh-pages -d out -b master -r https://github.com/tyrelh/tyrelh.github.io.git -f -t",
