@@ -26,7 +26,7 @@ export default function SearchInput(props: Props) {
     const [previousSearchTerm, setPreviousSearchTerm] = useState<string>('');
     const [fetching, setFetching] = useState<boolean>(false);
     const fetchRef = useRef(0);
-
+    const [isMobile, setIsMobile] = useState<boolean>(false);
     
 
     const navigateToArticle = (slug: string) => {
@@ -88,10 +88,27 @@ export default function SearchInput(props: Props) {
         document.querySelector('.ant-select-selection-search input').addEventListener('focus', function() {
             this.parentNode.parentNode.style.boxShadow = "0 3px 5px #00000022";
         });
-        
         document.querySelector('.ant-select-selection-search input').addEventListener('blur', function() {
-            this.parentNode.parentNode.style.boxShadow = "0 2px 3px #00000011";
+            // this.parentNode.parentNode.style.boxShadow = "0 2px 3px #00000011";
+            this.parentNode.parentNode.style.boxShadow = "";
         });
+
+        const handleResize = () => {
+            console.log('resize', isMobile);
+            // console.log('resize', window.matchMedia('(max-width: 768px)').matches);
+            setIsMobile(window.matchMedia('(max-width: 768px)').matches);
+        };
+    
+        // Initial check
+        handleResize();
+    
+        // Listen for window resize events
+        window.addEventListener('resize', handleResize);
+    
+        // Cleanup
+        
+
+
         if (!searchIndexLoaded) {
             import("./search-index.json")
                 .then((data) => {
@@ -108,12 +125,22 @@ export default function SearchInput(props: Props) {
             // return () => {
             // }
         }
-    }, []);
+        return () => window.removeEventListener('resize', handleResize);
+    }, [isMobile]);
 
     return (
-        <Affix className="search-affix">
+        <div
+            className="search-affix"
+            style={{
+                right: isMobile ? 20 : 70,
+                top: isMobile ? null : 2,
+                bottom: isMobile ? 10 : null
+            }}
+        >
             <Select
                 popupClassName="search-items"
+                // style={{ width: isMobile ? 200 : 300}}
+                style={{ width: 300}}
                 showSearch
                 filterOption={false}
                 onSearch={onChange}
@@ -127,6 +154,6 @@ export default function SearchInput(props: Props) {
                 options={options}
                 notFoundContent={fetching ? <Spin size="small" /> : null}
             />
-        </Affix>
+        </div>
     );
 }

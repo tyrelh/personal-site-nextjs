@@ -1,13 +1,14 @@
 .ant-select-show-search {
-    width: 300px;
-    top: 45px;
+    // width: 300px;
+    // top: 2px;
     font-family: $font-body !important;
+    z-index: 5;
     
     .ant-select-selector {
         font-family: $font-body !important;
-        background: lighten($color-main-bg, 5%) !important;
-        border: lighten($color-main-bg, 10%) !important;
-        box-shadow: 0 2px 3px #00000011;
+        background: $color-main-bg !important;
+        border: $color-main-bg !important;
+        // box-shadow: 0 2px 3px #00000011;
         
         .ant-select-selection-search {
             input {
@@ -74,5 +75,6 @@
 }
 
 .search-affix {
-    float: right;
+    position: fixed;
+    z-index: 5;
 }
