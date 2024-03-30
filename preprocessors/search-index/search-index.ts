@@ -89,6 +89,7 @@ const searchIndexJsonString = JSON.stringify(Object.fromEntries(searchIndex.entr
 // console.log("Search Index JSON: ", searchIndexJsonString);
 const searchIndexLocation = "./components/elements/search-index.json";
 fs.writeFileSync(searchIndexLocation, searchIndexJsonString, "utf8");
+fs.writeFileSync("./public/search-index.json", searchIndexJsonString, "utf8");
 console.log(`⏺ Search index saved to ${searchIndexLocation}\n`);
 
 const endTime = performance.now();
