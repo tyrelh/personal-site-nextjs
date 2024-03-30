@@ -15,6 +15,7 @@ export default function TagPage({tag, postsForTag}) {
     <>
       <HeadW title="superflux" />
       <StickyHeader title={tag} path={["blog","tags"]}/>
+    
       <SectionHeading>
         #{tag}
       </SectionHeading>

@@ -1,6 +1,7 @@
 import { SwapRightOutlined } from '@ant-design/icons';
 import Anchor from './Anchor';
 import ThemeToggle from './ThemeToggle';
+import SearchInput from './Search';
 
 export interface Props {
   title?: string;
@@ -12,6 +13,7 @@ export default function StickyHeader(props: Props) {
     <div id="sticky-header" className="sticky-header sticky-header-visible">
       <div className="breadcrumbs">
         <ThemeToggle/>
+        <SearchInput/>
         <Anchor href="/">
           superflux.dev
         </Anchor>

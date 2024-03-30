@@ -1,19 +1,13 @@
-import fs from "fs";
-import path from "path";
-import matter from "gray-matter";
 import { GetStaticProps, GetStaticPropsResult } from "next";
-import { PostData, PostMetadata, PostMetadataList } from "../dtos/PostData";
+import { PostData, PostMetadataList } from "../dtos/PostData";
 import { sortPostsByDate } from "../utils/dateUtils";
 import HeadW from "../components/layout/HeadW";
 import Anchor from "../components/elements/Anchor";
 import SectionHeading from "../components/elements/SectionHeading";
 import ArticlePreviewList from "../components/elements/ArticlePreviewList";
 import SocialCallout from "../components/elements/SocialCallout";
-import { calculateReadTimeOfText } from "../utils/textUtils";
 import StickyHeader from "../components/elements/StickyHeader";
 import { getPostData } from "../utils/articleFileUtils";
-import SearchInput from "../components/elements/Search";
-
 
 export default function Home({ posts }) {
   return (
@@ -27,7 +21,7 @@ export default function Home({ posts }) {
         A software developer constantly learning new skills and technologies. I work for <Anchor href="https://www.giftbit.com">Giftbit</Anchor> building great web services. You can see some of my work below as well as on my <Anchor href="https://github.com/tyrelh">Github</Anchor>.
       </p>
       <SocialCallout/>
-      <SearchInput/>
+      
       <SectionHeading>
         Articles
       </SectionHeading>
