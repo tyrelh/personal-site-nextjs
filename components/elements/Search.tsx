@@ -1,5 +1,5 @@
 import React, { PropsWithChildren, useEffect, useState, useMemo, useRef } from "react";
-import { Input, Select, SelectProps, Spin } from 'antd';
+import { Input, Select, SelectProps, Spin, Affix } from 'antd';
 import type { SearchProps } from 'antd/es/input/Search';
 import { SearchOutlined } from '@ant-design/icons';
 import debounce from 'lodash/debounce';
@@ -26,6 +26,8 @@ export default function SearchInput(props: Props) {
     const [previousSearchTerm, setPreviousSearchTerm] = useState<string>('');
     const [fetching, setFetching] = useState<boolean>(false);
     const fetchRef = useRef(0);
+
+    
 
     const navigateToArticle = (slug: string) => {
         router.push(`/blog/${slug}`)
@@ -82,6 +84,14 @@ export default function SearchInput(props: Props) {
     }
 
     useEffect(() => {
+        // hack to get focus drop shadow working
+        document.querySelector('.ant-select-selection-search input').addEventListener('focus', function() {
+            this.parentNode.parentNode.style.boxShadow = "0 3px 5px #00000022";
+        });
+        
+        document.querySelector('.ant-select-selection-search input').addEventListener('blur', function() {
+            this.parentNode.parentNode.style.boxShadow = "0 2px 3px #00000011";
+        });
         if (!searchIndexLoaded) {
             import("./search-index.json")
                 .then((data) => {
@@ -101,20 +111,15 @@ export default function SearchInput(props: Props) {
     }, []);
 
     return (
-        <>
+        <Affix className="search-affix">
             <Select
+                popupClassName="search-items"
                 showSearch
-                autoClearSearchValue
-                // variant="borderless"
-                // variant="filled"
                 filterOption={false}
-                style={{ width: 300 }}
                 onSearch={onChange}
                 onSelect={onSelect}
-                // status={options.length == 0 ? "error" : ""}
                 placeholder={searchIndexLoaded ? "Search" : '...'}
                 optionFilterProp="children"
-                size="small"
                 suffixIcon={<SearchOutlined />}
                 filterSort={(optionA: OptionValue, optionB: OptionValue) =>
                     (optionA?.label ?? '').toLowerCase().localeCompare((optionB?.label ?? '').toLowerCase())
@@ -122,6 +127,6 @@ export default function SearchInput(props: Props) {
                 options={options}
                 notFoundContent={fetching ? <Spin size="small" /> : null}
             />
-        </>
+        </Affix>
     );
 }
