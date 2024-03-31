@@ -12,6 +12,8 @@ If you'd like to learn how to deploy a static site using Next.js to GitHub Pages
 
 This functionality for my website was heavily inspired by [Bionic Julia's post on the same topic](https://dev.to/bionicjulia/creating-dynamic-tag-pages-with-nextjs-nested-routes-nah).
 
+![black next js logo on a plain white background](next-js-logo.png)
+
 ## Tl;dr
 - [Goal](#goal): To make tag pages that filter my articles by a tag
 - [Get tags from posts](#get-tags-from-posts): First step is to collate all the unique tags from my markdown article files.
@@ -23,8 +25,6 @@ This functionality for my website was heavily inspired by [Bionic Julia's post o
 - [Small gotcha](#small-gotcha): Need to strip some character from tags since they need to be URL safe now.
 - [Conclusion](#conclusion)
 - [Resources](#resources)
-
-![black next js logo on a plain white background](next-js-logo.png)
 
 ## Goal
 
