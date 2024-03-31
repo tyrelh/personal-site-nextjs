@@ -1,4 +1,3 @@
-import { SwapRightOutlined } from '@ant-design/icons';
 import Anchor from './Anchor';
 import ThemeToggle from './ThemeToggle';
 import SearchInput from './Search';
@@ -20,13 +19,12 @@ export default function StickyHeader(props: Props) {
         { props?.path?.length > 0 &&
           props?.path.map((pathPiece: string) => (
             <span key={pathPiece}>
-              <SwapRightOutlined />
-              {pathPiece}
+              <> / {pathPiece}</>
             </span>
           ))
         }
         {props?.title &&
-          <><SwapRightOutlined />{props.title}</>
+          <> / {props.title}</>
         }
       </div>
   </div>
