@@ -3,51 +3,26 @@
 .toggle-container {
   width: 32px;
   height: 32px;
-  font-size: 1.8rem;
+  font-size: 1.2rem;
   line-height: 30px;
   padding-left: 1px;
-  // top: 16px;
   right: 24px;
   top: 4px;
   position: fixed;
   z-index: 4;
-  // border-radius: 30px;
-  // background-color: $color-main-bg;
-  // text-align: center;
   -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
   transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
 
   @media (min-width: 375px)
   and (max-width: 812px) {
-    top: 0px;
+    top: 2px;
     right: 11px;
   }  
 
   .toggle-icon {
-    width: 1em;
-    height: 1em;
-
     @media (min-width: 375px) and (max-width: 812px) {
       width: 0.8em;
       height: 0.8em;
     }
-
-    .sun-icon {
-      // fill: $color-main-text;
-      stroke: $color-main-text;
-      // fill: $color-main-text-light-theme;
-    }
-
-    .moon-icon {
-      fill: $color-main-text-light-theme;
-      stroke: $color-main-text-light-theme;
-      // fill: $color-main-text;
-    }
   }
 }
-
-// .light-mode {
-//   .toggle-container {
-//     // background-color: rgba($color-main-bg-light-theme, 0.9);
-//   }
-// }
