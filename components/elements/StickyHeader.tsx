@@ -19,10 +19,10 @@ export default function StickyHeader(props: Props) {
         </Anchor>
         { props?.path?.length > 0 &&
           props?.path.map((pathPiece: string) => (
-            <>
+            <span key={pathPiece}>
               <SwapRightOutlined />
               {pathPiece}
-            </>
+            </span>
           ))
         }
         {props?.title &&
