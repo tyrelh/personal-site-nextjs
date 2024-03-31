@@ -20,7 +20,7 @@
           0 -5px 10px rgba(white, 0.09),
           0 5px 8px rgba(black, 0.5);
   background-color: lighten($color-main-bg, 1.5%);
-  cursor: pointer;
+  // cursor: pointer;
 }
 
 .ant-list-something-after-last-item .ant-spin-container > .ant-list-items > .ant-list-item:last-child {
@@ -40,7 +40,6 @@
             0 -5px 10px rgba(white, 1),
             0 5px 8px rgba(black, 0.1);
     background-color: lighten($color-main-bg-light-theme, 5%);
-    cursor: pointer;
   }
 }
 

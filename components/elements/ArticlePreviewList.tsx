@@ -1,10 +1,7 @@
-import { List, Tag } from "antd"
+import { List } from "antd"
 import { CalendarOutlined, ReadOutlined } from "@ant-design/icons"
 import { PostData, PostMetadata } from "../../dtos/PostData"
 import Link from "next/link"
-import Image from "next/image"
-import { useRouter } from 'next/navigation'
-import Anchor from "./Anchor"
 import Hashtag from "./Hashtag"
 
 
@@ -14,11 +11,6 @@ export interface Props {
 
 export default function ArticlePreviewList(props: Props) {
   const { articleMetadataList } = props
-  const router = useRouter()
-
-  const navigateToArticle = (slug: string) => {
-    router.push(`/blog/${slug}`)
-  }
   
   return (
     <List
@@ -30,25 +22,28 @@ export default function ArticlePreviewList(props: Props) {
         <List.Item
           key={post.slug}
           extra={
-            <img
-              className="article-preview-image" 
-              alt=""
-              src={post?.hero ? post.hero : null}/>
+            <Link href={`/blog/${post.slug}`}>
+              <img
+                className="article-preview-image" 
+                alt=""
+                src={post?.hero ? post.hero : null}/>
+            </Link>
           }
-          onClick={() => navigateToArticle(post.slug)}
         >
-          <h3 className="article-preview-title">
-            { post?.title ? post.title : post?.slug }
-          </h3>
-          {
-            post?.date &&
-              <h4>
-                <CalendarOutlined /> {post.date}  <ReadOutlined className="readtime-icon" /> {post.readTimeInMinutes} Minute Read
-              </h4>
-          }
-          <p className="article-preview-excerpt">
-            {post?.excerpt ? post.excerpt : null}
-          </p>
+          <Link href={`/blog/${post.slug}`}>
+            <h3 className="article-preview-title">
+              { post?.title ? post.title : post?.slug }
+            </h3>
+            {
+              post?.date &&
+                <h4>
+                  <CalendarOutlined /> {post.date}  <ReadOutlined className="readtime-icon" /> {post.readTimeInMinutes} Minute Read
+                </h4>
+            }
+            <p className="article-preview-excerpt">
+              {post?.excerpt ? post.excerpt : null}
+            </p>
+          </Link>
           {
             post?.tags?.length &&
             <p>
