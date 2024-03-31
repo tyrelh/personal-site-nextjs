@@ -7,17 +7,16 @@
 }
 
 .breadcrumbs {
-  padding: 8px 20px;
+  padding: 9px 20px;
   background-color: rgba($color-main-bg, 1);
   // box-shadow: 0px 4px 8px 0px rgba(black, 0.3);
-  font-family: $font-code;
+  font-family: $font-body;
   // font-feature-settings: "ss02" on,"ss01" on;
-  font-weight: 400;
+  // font-weight: 400;
   color: $color-main-text;
   -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
   transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
-
-  
+  // font-size: 0.9rem;
 
   @media (min-width: 375px)
   and (max-width: 812px) {
