@@ -21,7 +21,7 @@ export default function PostPage(post: PostData) {
   return (
     <>
       <HeadW title={post.title} />
-      <StickyHeader title={post.title} path={["blog"]}/>
+      <StickyHeader title={post.slug} path={["blog"]}/>
       <h1>{post.title}</h1>
       {post?.date &&
           <h4><CalendarOutlined /> {post.date}</h4>
