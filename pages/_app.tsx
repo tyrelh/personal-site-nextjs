@@ -1,5 +1,5 @@
 import "../styles/app.scss";
-import { Layout } from "antd";
+import { Layout, FloatButton, Tooltip } from "antd";
 import { AppProps } from "next/app";
 import Footer from "../components/layout/Footer";
 import Script from "next/script";
@@ -14,6 +14,7 @@ function App({ Component, pageProps }: AppProps) {
         <Content className="fadeIn">
           <Component {...pageProps} />
           <Footer/>
+          <FloatButton.BackTop className="back-to-top" tooltip={<div>Back to top</div>} />
         </Content>
       </Layout>
       {

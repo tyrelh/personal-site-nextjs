@@ -1,0 +1,41 @@
+.back-to-top {
+    background-color: lighten($color-main-bg, 10%) !important;
+    -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    box-shadow: 0 1px 1px rgba(black, 0.01);
+
+    .ant-float-btn-body {
+        background-color: lighten($color-main-bg, 10%) !important;
+        -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+        transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+        svg {
+            color: $color-main-text !important;
+        }
+    }
+}
+
+.back-to-top:hover {
+    background-color: lighten($color-main-bg, 15%) !important;
+    box-shadow: 0 3px 5px rgba(black, 0.15);
+
+    .ant-float-btn-body {
+        background-color: lighten($color-main-bg, 15%) !important;
+        
+        svg {
+            color: $color-main-text !important;
+        }
+    }
+}
+
+.light-mode {
+    .back-to-top {
+        background-color: $color-main-bg-light-theme !important;
+
+        .ant-float-btn-body {
+            background-color: lighten($color-main-bg-light-theme, 10%) !important;
+            svg {
+                color: $color-main-text-light-theme !important;
+            }
+        }
+    }
+}
