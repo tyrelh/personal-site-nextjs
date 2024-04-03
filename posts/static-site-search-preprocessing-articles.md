@@ -690,4 +690,6 @@ Hope you found this interesting or useful. 🙌🏻
 
 ## References
 
-- [Writing full text search in Javascript for Next.js static site](https://ahmadrosid.com/blog/fulltext-search-with-inverted-index)
+- [Writing full text search in Javascript for Next.js static site](https://ahmadrosid.com/blog/fulltext-search-with-inverted-index) - Great article from Ahmad Rosid on creating a static site search. Heavily inpired my implementation.
+- [Pagefind](https://pagefind.app/) - a static site search tool that I didn't end up using
+- [Add search to your Next.js static site with Pagefind](https://www.petemillspaugh.com/nextjs-search-with-pagefind) - article on using Pagefind with Next. Did not find it very helpful
