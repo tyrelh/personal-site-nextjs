@@ -1,6 +1,6 @@
 ---
 title: Static Site Search Part 1 - Preprocessing Articles
-date: March 31, 2024
+date: April 3, 2024
 author: Tyrel Delaney
 tags: static-site-generators nextjs javascript typesense search
 hero: /images/posts/static-site-search-preprocessing-articles.jpg
