@@ -5,6 +5,7 @@ author: "Tyrel Hiebert"
 excerpt: "In 2020 I began learning game development as a hobby. Now in the beginning of 2021 it is taking up most of my free time. This is a little intro into how I got started and the tools I learned"
 hero: "/images/posts/game-dev-godot.jpg"
 tags: "game-dev unity godot pixel-art"
+id: 10
 ---
 
 I've been spending a lot of my free time recently on a new hobby. Pixel style 2D game development. Here is a little intro to my dive into 2D game development.

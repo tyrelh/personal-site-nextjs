@@ -5,6 +5,7 @@ author: "Tyrel Hiebert"
 excerpt: "As part of translating my JavaScript and Node Battlesnake to TypeScript and Deno I wanted to setup continuous integration. It was som much easier than I imagined using GitHub Actions."
 hero: "/images/posts/DenoTestsAndGithubActionsCI.png"
 tags: "javascript typescript node deno github-actions cicd devops"
+id: 5
 ---
 
 During a recent project to convert my JavaScript & Node [Battlesnake](https://play.battlesnake.com/) over to TypeScript & [Deno](https://deno.land/), I decided I would also create a more robust suite of tests for it.

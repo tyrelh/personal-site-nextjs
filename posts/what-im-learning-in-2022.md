@@ -5,6 +5,7 @@ author: "Tyrel Hiebert"
 excerpt: "Here is a rundown of what I'm learning in 2022, what I'd like to learn in 2022, and some things I know I just wont have time for in 2022."
 hero: "/images/posts/what-im-learning-in-2022.jpg"
 tags: "docker github-actions neovim vpn synology ssl static-site-generators cicd aws"
+id: 12
 ---
 
 Here are some things that I'd like to learn more about in 2022. This is kindof a reference for myself. So I can look back at this next year and reflect on what I learned and what I wanted to learn. [Let me know on twitter](https://twitter.com/tyreldelaney) if you are learning these same things or you have any tips or resources to share!

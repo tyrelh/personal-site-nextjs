@@ -5,6 +5,7 @@ author: "Tyrel Delaney"
 excerpt: "I recently got myself a Synology NAS. What does that even mean? In this part one of two, I talk a bit about what a Synology NAS is. In part two, I'll talk about the cool things I do with mine."
 hero: "/images/posts/synology-nas.png"
 tags: "synology nas data-ownership hardware"
+id: 15
 ---
 
 ## Tl;dr

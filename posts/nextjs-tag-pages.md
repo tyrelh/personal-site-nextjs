@@ -5,6 +5,7 @@ author: "Tyrel Delaney"
 excerpt: "My goal with this project was to make the tags I'm already displaying alongside articles to be clickable links that filter my posts by that tag. Try to click one!"
 hero: "/images/posts/tag-page-screenshot.png"
 tags: "nextjs javascript typescript webdev static-site-generators"
+id: 19
 ---
 This article was written around July 2023.
 

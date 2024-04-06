@@ -5,6 +5,7 @@ author: "Tyrel Delaney"
 excerpt: "Here are the resouces I got value from in 2023. Topics include kids, devops, web dev, and some hardware stuff."
 hero: "/images/posts/resources-2022-hero.jpg"
 tags: "devops nextjs hardware raspberry-pi synology kids webdev"
+id: 14
 ---
 
 My defining event in 2022 was the birth of our first child in Dec 2022.

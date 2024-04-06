@@ -5,6 +5,7 @@ author: "Tyrel Hiebert"
 excerpt: "After becoming infatuated with custom mechanical keyboards I decided to build my own. Not from a kit, but like from scratch. This is my journey through designing, aquiring parts, building, and programming my own mechanical keyboard complete with a custom layout I designed."
 hero: "/images/posts/MechanicalKeyboard-12.jpg"
 tags: "mechanical-keyboards arduino c++ hardware"
+id: 1
 ---
 
 ![Top view of keyboard with acrylic case and purple glowing LEDs](MechanicalKeyboard-12.jpg)

@@ -5,6 +5,7 @@ author: "Tyrel Delaney"
 excerpt: "Here are some point-form takeaways from my notes from reading The DevOps Handbook by John Willis, Gene Kim, and Patrick Debois."
 hero: "/images/posts/devopshandbook.png"
 tags: "book-notes devops automation testing continuous-integration continuous-deployment cicd infrastructure infrastructure-as-code git feedback-loops continuous-learning"
+id: 18
 ---
 ![Book cover of Dev ops handbook](devopshandbook.png)
 

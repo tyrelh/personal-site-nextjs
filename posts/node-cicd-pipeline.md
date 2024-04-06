@@ -5,6 +5,7 @@ author: "Tyrel Hiebert"
 excerpt: "Here is my journey into creating an automated continuous integration and continuous deployment workflow for a project using GitHub Actions."
 hero: "/images/posts/node-cicd-pipeline-hero.png"
 tags: "github-actions cicd typescript aws automation"
+id: 6
 ---
 
 Here is my journey into creating an automated workflow to test, build, and deploy a project I have been working on using Github Actions and Elastic Beanstalk.

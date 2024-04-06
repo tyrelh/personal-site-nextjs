@@ -5,6 +5,7 @@ author: "Tyrel Delaney"
 excerpt: "I cover the config and deployment steps necessary to easily deploy a static site built with Next.js to GitHub Pages."
 hero: "/images/posts/NextJSGitHubPagesHero.png"
 tags: "github-pages nextjs react static-site-generators typescript javascript"
+id: 16
 ---
 
 Let's say you've built an nice new static site using Next.js and you want to host it on GitHub Pages. Well there's a few steps to get it working, but it isn't too hard.

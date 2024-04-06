@@ -5,6 +5,7 @@ author: "Tyrel Hiebert"
 excerpt: "Upgrading our application from Grails 2 to Grails 3 has been a long process. Migrating our static frontend assets is just one piece of that process."
 hero: "/images/posts/GrailsAssetMigration.svg"
 tags: "grails"
+id: 3
 ---
 
 Upgrading our application from Grails 2 to Grails 3 has been a long process. This is just one piece of that process.

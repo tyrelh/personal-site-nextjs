@@ -5,6 +5,7 @@ author: "Tyrel Hiebert"
 excerpt: "I developed a dark and light theme for this site and built a toggle to switch between them. Also I used media queries to set the default theme to match the visitors operating system choice."
 hero: "/images/posts/DarkModeToggle-1.svg"
 tags: "react dark-mode javascript webdev"
+id: 7
 ---
 
 I developed a dark and light theme for this site and built a toggle to switch between them. Also I used media queries to set the default theme to match the visitors operating system choice.

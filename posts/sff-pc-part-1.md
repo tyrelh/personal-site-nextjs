@@ -5,6 +5,7 @@ author: "Tyrel Hiebert"
 excerpt: "My first small form factor gaming PC and my second proper gaming PC. This machine uses a Ryzen 7 5800X processor and a EVGA RTX 3080 XC3 Ultra graphics card, all in the 13.5L Metalfish S5 case from AliExpress."
 hero: "/images/posts/sff-pc-part-1-5.jpg"
 tags: "pc gaming hardware"
+id: 8
 ---
 
 This article I originally [posted to the SFFPC subreddit](https://www.reddit.com/r/sffpc/comments/kpc0ul/part_1_of_my_first_sff_build_metalfish_s5_case/).

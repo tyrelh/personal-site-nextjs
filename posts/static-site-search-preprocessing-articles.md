@@ -5,6 +5,7 @@ author: Tyrel Delaney
 tags: static-site-generators nextjs javascript typesense search
 hero: /images/posts/static-site-search-preprocessing-articles.jpg
 excerpt: In this series of articles I discuss how I created a client-side search for my static website. After looking at a few options out there for static sites and Next.js projects, I decided the challenge to build my own search from scratch would be more enjoyable. This first article discusses how I preprocess my articles into a search index.
+id: 20
 ---
 
 ![](./static-site-search-preprocessing-articles.jpg)
