@@ -22,6 +22,7 @@ export const getPostData = (dir: string = ""): PostData[] => {
       hero: frontmatter?.hero,
       excerpt: frontmatter?.excerpt,
       tags: frontmatter?.tags ? frontmatter.tags.split(" ") : null,
+      id: frontmatter?.id,
       readTimeInMinutes: readTimeInMinutes,
       content: content
     };

@@ -5,6 +5,7 @@ export interface PostMetadata {
     excerpt: string;
     hero: string;
     tags: string[];
+    id: number;
     readTimeInMinutes?: number;
 }
 
