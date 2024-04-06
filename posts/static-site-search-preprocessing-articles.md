@@ -18,7 +18,13 @@ I only have 19 posts as of writing this (this is the 20th), so the search space 
 
 I also like the idea of building it myself as much as I can. Building this website is a learning exercise and I don't learn much by running `npm install tool-that-solves-your-problem`.
 
-### Pagefind
+## Static Site Search Series
+
+This is the first part in a series of articles which covers creating the search index from my markdown articles.
+
+[The second part is now live](https://superflux.dev/blog/static-site-search-search-component). There I cover creating the search component and UI that uses this search index to perform searches.
+
+## Pagefind
 
 In my initial research I came across [Pagefind](https://pagefind.app/). It seems like what I wanted. Static site search with a default but customizable UI.
 
