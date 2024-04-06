@@ -343,6 +343,12 @@ const onChange = useMemo(() => {
 
 - [Ant Design Select component](https://ant.design/components/select)
 
+## Repository
+
+This website in it's entirety is viewable on [GitHub](https://github.com/tyrelh/personal-site-nextjs).
+
+The search logic doesn't have it's own repo yet. But I'll update that here if I ever split it out.
+
 ## Conclusion
 
 I think this turned out really well. It works great and really only took a couple of days to figure out end-to-end. It was a pretty interesting and fun project too.
@@ -350,7 +356,5 @@ I think this turned out really well. It works great and really only took a coupl
 I was going to call this "Next.js Static Site Search", but in the end with this solution it really has nothing to do with Next. You should be able to incorporate this into any statically generated site, particularly those using Markdown and React, although you should be able to adapt it to other stacks as well.
 
 This is working quite well for me in it's current state, but there are lots of optimizations to be made. If I get around to those I'll post a third part to this series explaining the optimizations I implemented.
-
-If I get around to it some day I'll try to pull this out into it's own repository so it might be easier for folks to use if they want.
 
 Thanks for reading!
