@@ -1,9 +1,9 @@
 import { PostData } from "../../dtos/PostData";
-import { getPostData } from "../../utils/articleFileUtils";
+import { getPostDataList } from "../../utils/articleFileUtils";
 import * as fs from "fs";
 
-export const createSearchIndex = (postDataList: PostData[]): Map<string, { title: string, slug: string }[]> => {
-  const searchIndex: Map<string, { title: string, slug: string }[]> = new Map();
+export const createSearchIndex = (postDataList: PostData[]): Map<string, number[]> => {
+  const searchIndex: Map<string, number[]> = new Map();
   postDataList.forEach((post: PostData) => {
 
     // parse tags
@@ -39,19 +39,18 @@ export const createSearchIndex = (postDataList: PostData[]): Map<string, { title
   return searchIndex;
 }
 
-const addToIndex = (searchIndex: Map<string, { title: string, slug: string }[]>, key: string, post: PostData) => {
-  const value = {"title": post.title, "slug": post.slug};
+const addToIndex = (searchIndex: Map<string, number[]>, key: string, post: PostData) => {
   if (!searchIndex.has(key)) {
     searchIndex.set(key, new Array());
   }
   let found = false;
   for (let item of searchIndex.get(key)) {
-    if (item.title === value.title) {
+    if (item === post.id) {
       found = true;
     }
   }
   if (!found) {
-    searchIndex.get(key).push(value);
+    searchIndex.get(key).push(post.id);
   }
 }
 
@@ -68,10 +67,7 @@ export const createNGrams = (token: string): Set<string> => {
   const n = 10;
   const nGrams: Set<string> = new Set();
   for (let nx = 1; nx <= n; nx++) {
-    for (let i = 0; i < token.length - nx + 1; i++) {
-      const nGram = token.slice(i, i + nx);
-      nGrams.add(nGram);
-    }
+    nGrams.add(token.slice(0, nx));
   };
   if (token.length > n) {
     nGrams.add(token);
@@ -81,9 +77,9 @@ export const createNGrams = (token: string): Set<string> => {
 
 const startTime = performance.now();
 
-const postDataList: PostData[] = getPostData("./posts");
+const postDataList: PostData[] = getPostDataList("./posts");
 // console.log("Post Data List: ", postDataList);
-const searchIndex: Map<string, { title: string, slug: string }[]> = createSearchIndex(postDataList);
+const searchIndex: Map<string, number[]> = createSearchIndex(postDataList);
 // console.log("Search Index: ", searchIndex);
 const searchIndexJsonString = JSON.stringify(Object.fromEntries(searchIndex.entries()));
 // console.log("Search Index JSON: ", searchIndexJsonString);
