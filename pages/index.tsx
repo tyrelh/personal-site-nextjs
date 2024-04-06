@@ -1,5 +1,5 @@
 import { GetStaticProps, GetStaticPropsResult } from "next";
-import { PostData, PostMetadataList } from "../dtos/PostData";
+import { PostData, PostMetadata, PostMetadataList } from "../dtos/PostData";
 import { sortPostsByDate } from "../utils/dateUtils";
 import HeadW from "../components/layout/HeadW";
 import Anchor from "../components/elements/Anchor";
@@ -7,13 +7,15 @@ import SectionHeading from "../components/elements/SectionHeading";
 import ArticlePreviewList from "../components/elements/ArticlePreviewList";
 import SocialCallout from "../components/elements/SocialCallout";
 import StickyHeader from "../components/elements/StickyHeader";
-import { getPostData } from "../utils/articleFileUtils";
+import { getPostDataList, getPostMetaData } from "../utils/articleFileUtils";
+import { getSearchIndex } from "../utils/searchIndexFileUtils";
+import { searchIndexToJson } from "../utils/searchIndexUtils";
 
-export default function Home({ posts }) {
+export default function Home({ posts, searchIndexJson }) {
   return (
     <>
       <HeadW title="superflux" />
-      <StickyHeader />
+      <StickyHeader postMetadataList={posts} searchIndexJson={searchIndexJson} />
       <h1>
         Hi, I&rsquo;m Tyrel.
       </h1>
@@ -39,11 +41,14 @@ export default function Home({ posts }) {
 // GET POST METADATA FROM MARKDOWN ARTICLES
 export const getStaticProps: GetStaticProps = async (
   context
-): Promise<GetStaticPropsResult<PostMetadataList>> => {
-  const postDataList: PostData[] = getPostData();
+): Promise<GetStaticPropsResult<{posts: PostMetadata[], searchIndexJson: string }>> => {
+  const searchIndex = getSearchIndex();
+  const searchIndexJson = searchIndexToJson(searchIndex);
+  const postMetadataList: PostMetadata[] = getPostMetaData();
   return {
     props: {
-      posts: postDataList.sort(sortPostsByDate),
+      posts: postMetadataList.sort(sortPostsByDate),
+      searchIndexJson
     },
   };
 };

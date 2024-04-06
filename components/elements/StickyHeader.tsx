@@ -1,10 +1,13 @@
 import Anchor from './Anchor';
 import ThemeToggle from './ThemeToggle';
 import SearchInput from './Search';
+import { PostMetadata } from '../../dtos/PostData';
 
 export interface Props {
   title?: string;
   path?: string[];
+  searchIndexJson?: string;
+  postMetadataList?: PostMetadata[];
 }
 
 export default function StickyHeader(props: Props) {
@@ -12,7 +15,7 @@ export default function StickyHeader(props: Props) {
     <div id="sticky-header" className="sticky-header sticky-header-visible">
       <div className="breadcrumbs">
         <ThemeToggle/>
-        <SearchInput/>
+        <SearchInput searchIndexJson={props.searchIndexJson} postMetadataList={props.postMetadataList} />
         <Anchor href="/">
           superflux.dev
         </Anchor>

@@ -2,16 +2,23 @@ import React, { useEffect, useState, useRef } from "react";
 import { Select } from 'antd';
 import { SearchOutlined } from '@ant-design/icons';
 import { useRouter } from 'next/navigation'
+import { PostMetadata } from "../../dtos/PostData";
+import { getPostMetadataById } from "../../utils/postMetadataUtils";
+import { jsonToSearchIndex } from "../../utils/searchIndexUtils";
 
 interface OptionValue {
     label: string;
     value: string;
 }
 
-export default function SearchInput() {
+export interface Props {
+    searchIndexJson: string;
+    postMetadataList: PostMetadata[];
+}
+
+export default function SearchInput(props: Props) {
     const router = useRouter();
-    const [searchIndex, setSearchIndex] = useState<Map<string, object>>(new Map());
-    const [searchIndexLoaded, setSearchIndexLoaded] = useState<boolean>(false);
+    const [searchIndex, setSearchIndex] = useState<Map<string, number[]>>(new Map());
     const [options, setOptions] = useState<OptionValue[]>([]);
     const [previousSearchTerm, setPreviousSearchTerm] = useState<string>('');
     const fetchRef = useRef(0);
@@ -36,9 +43,11 @@ export default function SearchInput() {
             return;
         }
         setPreviousSearchTerm(searchTerm);
-        if (searchIndex.entries() && searchIndex.has(searchTerm)) {
+        if (searchIndex.size && searchIndex.has(searchTerm)) {
             const newOptions = new Array<OptionValue>();
-            for (const item of searchIndex.get(searchTerm) as { title: string, slug: string }[]) {
+            console.log(`matching search term "${searchTerm}" to post ids [ ${searchIndex.get(searchTerm)} ]`)
+            for (const id of searchIndex.get(searchTerm)) {
+                const item: PostMetadata = getPostMetadataById(id, props.postMetadataList);
                 newOptions.push({
                     value: item.slug,
                     label: item.title,
@@ -46,11 +55,18 @@ export default function SearchInput() {
             }
             setOptions(newOptions);
         } else {
+            console.log(`no match for search term "${searchTerm}"`)
             setOptions([]);
         }
     }
 
     useEffect(() => {
+        // deserialize search index
+        if (!searchIndex.size) {
+            setSearchIndex(jsonToSearchIndex(props.searchIndexJson));
+            console.log("Set search index");
+        }
+
         // hack to get focus drop shadow working
         document.querySelector('.ant-select-selection-search input').addEventListener('focus', function() {
             this.parentNode.parentNode.style.boxShadow = "0 3px 5px #00000022";
@@ -60,30 +76,13 @@ export default function SearchInput() {
             this.parentNode.parentNode.style.boxShadow = "";
         });
 
+        // breakpoint handler to adjust search affix position
         const handleResize = () => {
             setIsMobile(window.matchMedia('(max-width: 768px)').matches);
         };
-    
         handleResize();
         window.addEventListener('resize', handleResize);
     
-        // load search index
-        if (!searchIndexLoaded) {
-            import("./search-index.json")
-                .then((data) => {
-                    const indexMap = new Map<string, object>();
-                    for (const key of Object.keys(data)) {
-                        indexMap.set(key, data[key]);
-                    }
-                    setSearchIndex(indexMap);
-                    setSearchIndexLoaded(true);
-                })
-                .catch((error) => {
-                    console.error('Error loading search index:', error);
-                });
-            // return () => {
-            // }
-        }
         return () => window.removeEventListener('resize', handleResize);
     }, [isMobile]);
 
@@ -103,7 +102,7 @@ export default function SearchInput() {
                 filterOption={false}
                 onSearch={onChange}
                 onSelect={navigateToArticle}
-                placeholder={searchIndexLoaded ? "Search" : '...'}
+                placeholder="Search"
                 suffixIcon={<SearchOutlined />}
                 filterSort={(a: OptionValue, b: OptionValue) =>
                     (a?.label ?? '').toLowerCase().localeCompare((b?.label ?? '').toLowerCase())

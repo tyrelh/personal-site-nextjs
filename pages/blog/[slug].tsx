@@ -8,20 +8,23 @@ import {
   GetStaticProps,
   GetStaticPropsResult,
 } from "next/types";
-import { PostData } from "../../dtos/PostData";
+import { PostData, PostMetadata } from "../../dtos/PostData";
 import HeadW from "../../components/layout/HeadW";
 import { renderer } from "../../utils/markedUtils"
 import StickyHeader from "../../components/elements/StickyHeader";
 import Hashtag from "../../components/elements/Hashtag";
-import { CalendarOutlined } from "@ant-design/icons"
+import { CalendarOutlined } from "@ant-design/icons";
+import { getSearchIndex } from "../../utils/searchIndexFileUtils";
+import { getPostMetaData } from "../../utils/articleFileUtils";
+import { searchIndexToJson } from "../../utils/searchIndexUtils";
 
 marked.use({ renderer });
 
-export default function PostPage(post: PostData) {
+export default function PostPage({ post, postMetadataList, searchIndexJson }) {
   return (
     <>
       <HeadW title={post.title} />
-      <StickyHeader title={post.slug} path={["blog"]}/>
+      <StickyHeader searchIndexJson={searchIndexJson} postMetadataList={postMetadataList} title={post.slug} path={["blog"]}/>
       <h1>{post.title}</h1>
       {post?.date &&
           <h4><CalendarOutlined /> {post.date}</h4>
@@ -52,7 +55,7 @@ export const getStaticPaths: GetStaticPaths =
   };
   
 // get post data for a given slug (filename)
-export const getStaticProps: GetStaticProps = async ({ params: { slug } }): Promise<GetStaticPropsResult<PostData>> => {
+export const getStaticProps: GetStaticProps = async ({ params: { slug } }): Promise<GetStaticPropsResult<{post: PostData, searchIndexJson: string, postMetadataList: PostMetadata[] }>> => {
   const markdownWithMeta = fs.readFileSync(
     path.join("posts", slug + ".md"),
     "utf-8"
@@ -65,9 +68,17 @@ export const getStaticProps: GetStaticProps = async ({ params: { slug } }): Prom
     excerpt: frontmatter?.excerpt,
     hero: frontmatter?.hero,
     tags: frontmatter?.tags ? frontmatter.tags.split(" ") : null,
+    id : frontmatter?.id,
     content: content
   };
+  const searchIndex = getSearchIndex();
+  const searchIndexJson = searchIndexToJson(searchIndex);
+  const postMetadataList: PostMetadata[] = getPostMetaData();
   return {
-    props: { ...postData }
+    props: {
+      post: postData,
+      searchIndexJson: searchIndexJson,
+      postMetadataList: postMetadataList
+    }
   };
 };
