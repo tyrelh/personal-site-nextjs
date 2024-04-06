@@ -32,6 +32,7 @@ yarn-error.log*
 # assets
 *.woff2
 *.woff
+*.psd
 
 # compiled preprocessors
 /preprocessors/**/*.js
