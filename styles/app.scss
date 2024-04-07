@@ -30,13 +30,13 @@ body {
   height: 100%;
   width: 100%;
   background-color: darken($color-main-bg, 3%);
+  background-color: $color-main-bg;
   -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
   transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 body.light-mode {
-  // background-color: lighten($color-main-bg, 3%);
-  background-color: darken($color-main-bg-light-theme, 10%);
+  background-color: $color-main-bg-light-theme;
 }
 
 .app {
@@ -44,7 +44,6 @@ body.light-mode {
   padding: 1rem 3rem 2rem 2rem;
   font-size: 1.70em;
   background-color: $color-main-bg;
-  box-shadow: 0 5px 20px rgba(black, 0.4);
 
   -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
   transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
