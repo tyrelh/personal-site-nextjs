@@ -8,15 +8,12 @@
 
 .breadcrumbs {
   padding: 9px 20px;
-  background-color: rgba($color-main-bg, 1);
-  // box-shadow: 0px 4px 8px 0px rgba(black, 0.3);
+  background-color: rgba($color-main-bg, 0.8);
+  backdrop-filter: blur(5px);
   font-family: $font-body;
-  // font-feature-settings: "ss02" on,"ss01" on;
-  // font-weight: 400;
   color: $color-main-text;
   -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
   transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
-  // font-size: 0.9rem;
 
   @media (min-width: 375px)
   and (max-width: 812px) {
@@ -26,7 +23,6 @@
   }
 
   a {
-    // color: $color-main-text;
     font-weight: 600;
     background-color: $color-accent-first;
     background-image: linear-gradient(45deg, $color-accent-first, lighten($color-accent-second, 3%));
@@ -50,9 +46,8 @@
 
 .light-mode {
   .breadcrumbs {
-    background-color: rgba($color-main-bg-light-theme, 1);
+    background-color: rgba($color-main-bg-light-theme, 0.8);
     color: $color-main-text-light-theme;
-    // box-shadow: 0px 2px 8px 0px rgba($color-shadow, 0.15);
 
     a {
       color: $color-main-text-light-theme;
@@ -60,21 +55,6 @@
   }
 }
 
-.headerColorBar {
-  width: 100%;
-  height: 1px;
-  // background-image: linear-gradient(120deg, rgba($color-accent-first, 0.85) 0%, rgba($color-accent-second, 0.85) 100%);
-  background: darken($color-main-bg, 3%);
-  bottom: 0;
-  -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
-  transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
-}
-
-.light-mode {
-  .headerColorBar {
-    background: darken($color-main-bg-light-theme, 3%);
-  }
-}
 
 // .sticky-header-hidden {
 //   top: -100px;
