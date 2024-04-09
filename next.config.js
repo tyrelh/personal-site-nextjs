@@ -6,7 +6,7 @@ const nextConfig = {
   transpilePackages: [
     "antd",
     "rc-util",
-    "@babel/runtime",
+    // "@babel/runtime",
     "@ant-design/icons",
     "@ant-design/icons-svg",
     "rc-pagination",

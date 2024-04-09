@@ -80,5 +80,3 @@ This will cause any `<asset:image src=”brand/logo.svg” alt=”Company Wordma
 This lets you remove requests for static assets off of your application and onto some other CDN, reducing load on your application.
 
 In the future we are interested in the ability to push frontend static asset changes separate from an application deploy, but by default I am not sure this is possible using the standard Asset-Pipeline plugin. Production compiled assets have unique hashes in their filenames to bust caches which renders a redeploy of our application necessary to update the server side with those unique filenames.
-
-Stay dialed in for more Grails 2 → 3 posts.
