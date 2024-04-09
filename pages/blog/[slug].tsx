@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import { marked } from "marked";
+import Markdown from 'marked-react';
 import {
   GetStaticPaths,
   GetStaticPathsResult,
@@ -18,7 +18,6 @@ import { getSearchIndex } from "../../utils/searchIndexFileUtils";
 import { getPostMetaData } from "../../utils/articleFileUtils";
 import { searchIndexToJson } from "../../utils/searchIndexUtils";
 
-marked.use({ renderer });
 
 export default function PostPage({ post, postMetadataList, searchIndexJson }) {
   return (
@@ -34,7 +33,7 @@ export default function PostPage({ post, postMetadataList, searchIndexJson }) {
           <Hashtag key={tag} tag={tag}/>
         ))}
       </p>
-      <div dangerouslySetInnerHTML={{ __html: marked.parse(post.content) }}></div>
+      <Markdown renderer={renderer}>{post.content}</Markdown>
     </>
   );
 }
