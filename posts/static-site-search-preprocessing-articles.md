@@ -43,7 +43,7 @@ The downside is you need to load this search index at some point, hopefully lazi
 
 I write my articles in markdown with front matter metadata. I use the following format for my metadata:
 
-```markdown
+```text
 ---
 title: "Some apples are too sour"
 date: "October 27, 2197"
