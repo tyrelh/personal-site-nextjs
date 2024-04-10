@@ -18,7 +18,13 @@ I only have 19 posts as of writing this (this is the 20th), so the search space 
 
 I also like the idea of building it myself as much as I can. Building this website is a learning exercise and I don't learn much by running `npm install tool-that-solves-your-problem`.
 
-### Pagefind
+## Static Site Search Series
+
+This is the first part in a series of articles which covers creating the search index from my markdown articles.
+
+[The second part is now live](https://superflux.dev/blog/static-site-search-search-component). There I cover creating the search component and UI that uses this search index to perform searches.
+
+## Pagefind
 
 In my initial research I came across [Pagefind](https://pagefind.app/). It seems like what I wanted. Static site search with a default but customizable UI.
 
@@ -681,6 +687,18 @@ console.log("\n✔ Done")
 
 I also refactored and simplified how I was converting the index to JSON, and added some nice console output as well.
 
+## References
+
+- [Writing full text search in Javascript for Next.js static site](https://ahmadrosid.com/blog/fulltext-search-with-inverted-index) - Great article from Ahmad Rosid on creating a static site search. Heavily inpired my implementation.
+- [Pagefind](https://pagefind.app/) - a static site search tool that I didn't end up using
+- [Add search to your Next.js static site with Pagefind](https://www.petemillspaugh.com/nextjs-search-with-pagefind) - article on using Pagefind with Next. Did not find it very helpful
+
+## Repository
+
+This website in it's entirety is viewable on [GitHub](https://github.com/tyrelh/personal-site-nextjs).
+
+The search logic doesn't have it's own repo yet. But I'll update that here if I ever split it out.
+
 ## Conclusion
 
 Well thats it for the search index preprocessor. In an upcoming article I'll discuss how I built a search component to use this search index on my Next static site (this site!).
@@ -689,8 +707,4 @@ Give the search a try! It's near the top on desktop or bottom on mobile.
 
 Hope you found this interesting or useful. 🙌🏻
 
-## References
 
-- [Writing full text search in Javascript for Next.js static site](https://ahmadrosid.com/blog/fulltext-search-with-inverted-index) - Great article from Ahmad Rosid on creating a static site search. Heavily inpired my implementation.
-- [Pagefind](https://pagefind.app/) - a static site search tool that I didn't end up using
-- [Add search to your Next.js static site with Pagefind](https://www.petemillspaugh.com/nextjs-search-with-pagefind) - article on using Pagefind with Next. Did not find it very helpful
