@@ -28,12 +28,12 @@ export default function Home({ posts, searchIndexJson }) {
         Articles
       </SectionHeading>
       <ArticlePreviewList articleMetadataList={posts} />
-      {/* <SectionHeading>
+      <SectionHeading>
         Get in touch
       </SectionHeading>
       <p>
-        Feel free to contact me via <Anchor href="https://twitter.com/tyreldelaney">Twitter</Anchor>!
-      </p> */}
+        Feel free to contact me via <Anchor href="https://bsky.app/profile/superflux.dev">Bluesky</Anchor>!
+      </p>
     </>
   );
 }

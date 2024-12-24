@@ -3,6 +3,7 @@ import { ThunderboltFilled, TwitterOutlined, GithubFilled } from "@ant-design/ic
 import { Layout, Space } from "antd"
 import LinkedinLogoIcon from "../elements/LinkedinLogoIcon";
 import Link from "next/link";
+import BlueskyLogoIcon from "../elements/BlueskyLogoIcon";
 const { Footer: AntFooter } = Layout 
 
 export default function Footer() {
@@ -13,7 +14,7 @@ export default function Footer() {
           <Link href="/">Return to homepage</Link>
         </p>
         <p>
-          Made with <ThunderboltFilled /> by Tyrel Delaney   <Anchor href="https://github.com/tyrelh"><GithubFilled /></Anchor>  <Anchor href="https://www.linkedin.com/in/tyrelhiebert/"><LinkedinLogoIcon /></Anchor><br/>
+          Made with <ThunderboltFilled /> by Tyrel Delaney   <Anchor href="https://bsky.app/profile/superflux.dev"><BlueskyLogoIcon/></Anchor>  <Anchor href="https://github.com/tyrelh"><GithubFilled /></Anchor>  <Anchor href="https://www.linkedin.com/in/tyrelhiebert/"><LinkedinLogoIcon /></Anchor><br/>
         </p>
       </Space>
       <p>
