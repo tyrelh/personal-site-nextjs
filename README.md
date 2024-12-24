@@ -16,6 +16,8 @@ Source code for my personal website. Check it out at [superflux.dev](https://sup
 ```shell
 npm install
 
+npm run compile-search-index
+
 npm run dev
 ```
 
