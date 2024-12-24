@@ -12,7 +12,7 @@ export default class LinkedinLogoIcon extends React.Component {
 
   render() {
     return (
-          <Icon component={this.LinkedinSvg} />
+          <Icon id="LinkedInLogo" component={this.LinkedinSvg} />
     )
   }
 }
