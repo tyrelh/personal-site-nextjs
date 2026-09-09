@@ -19,9 +19,8 @@ export default function SocialCallout(props: Props) {
   return (
     <div className={clazz}>
       {/* <Anchor href="https://twitter.com/tyreldelaney"><TwitterOutlined/></Anchor> */}
-      <Anchor href="https://bsky.app/profile/superflux.dev"><BlueskyLogoIcon/></Anchor>
       <Anchor href="https://github.com/tyrelh"><GithubFilled/></Anchor>
-      <Anchor href="https://www.linkedin.com/in/tyrelhiebert/"><LinkedinLogoIcon/></Anchor>
+      <Anchor href="https://www.linkedin.com/in/tyreldelaney/"><LinkedinLogoIcon/></Anchor>
     </div>
   )
 }
