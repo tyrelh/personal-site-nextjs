@@ -4,7 +4,7 @@ import { Layout, Space } from "antd"
 import LinkedinLogoIcon from "../elements/LinkedinLogoIcon";
 import Link from "next/link";
 import BlueskyLogoIcon from "../elements/BlueskyLogoIcon";
-const { Footer: AntFooter } = Layout 
+const { Footer: AntFooter } = Layout
 
 export default function Footer() {
   return (
@@ -14,12 +14,12 @@ export default function Footer() {
           <Link href="/">Return to homepage</Link>
         </p>
         <p>
-          Made with <ThunderboltFilled /> by Tyrel Delaney   <Anchor href="https://bsky.app/profile/superflux.dev"><BlueskyLogoIcon/></Anchor>  <Anchor href="https://github.com/tyrelh"><GithubFilled /></Anchor>  <Anchor href="https://www.linkedin.com/in/tyrelhiebert/"><LinkedinLogoIcon /></Anchor><br/>
+          Made with <ThunderboltFilled /> by Tyrel Delaney  <Anchor href="https://github.com/tyrelh"><GithubFilled /></Anchor>  <Anchor href="https://www.linkedin.com/in/tyrelhiebert/"><LinkedinLogoIcon /></Anchor><br/>
         </p>
       </Space>
-      <p>
+      {/*<p>
         I use <Anchor href="https://plausible.io/superflux.dev">Plausible.io</Anchor> to collect privacy respecting visitor analytics.
-      </p>
+      </p>*/}
       <p>
         <Anchor href="https://www.github.com/tyrelh/personal-site-nextjs/"><GithubFilled /> View website source</Anchor>
       </p>

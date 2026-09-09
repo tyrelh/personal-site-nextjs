@@ -23,17 +23,11 @@ export default function Home({ posts, searchIndexJson }) {
         A software developer constantly learning new skills and technologies. I work for <Anchor href="https://www.giftbit.com">Giftbit</Anchor> building great web services. You can see some of my work below as well as on my <Anchor href="https://github.com/tyrelh">Github</Anchor>.
       </p>
       <SocialCallout/>
-      
+
       <SectionHeading>
         Articles
       </SectionHeading>
       <ArticlePreviewList articleMetadataList={posts} />
-      <SectionHeading>
-        Get in touch
-      </SectionHeading>
-      <p>
-        Feel free to contact me via <Anchor href="https://bsky.app/profile/superflux.dev">Bluesky</Anchor>!
-      </p>
     </>
   );
 }
