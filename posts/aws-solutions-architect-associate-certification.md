@@ -1,6 +1,6 @@
 ---
 title: AWS Solutions Architect Associate Certification
-date: 2025-01-20T00:00:00.000Z
+date: 2025-06-20T00:00:00.000Z
 tags:
   - aws
   - certification
