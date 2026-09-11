@@ -1,5 +1,5 @@
 import { PostData } from "../../dtos/PostData";
-import { getPostDataList } from "../../utils/articleFileUtils";
+import { getPostDataList, getPostMetaData } from "../../utils/articleFileUtils";
 import * as fs from "fs";
 
 export const createSearchIndex = (postDataList: PostData[]): Map<string, number[]> => {
@@ -81,6 +81,15 @@ const postDataList: PostData[] = getPostDataList("./posts");
 // console.log("Post Data List: ", postDataList);
 const searchIndex: Map<string, number[]> = createSearchIndex(postDataList);
 // console.log("Search Index: ", searchIndex);
+// guards the day someone splits getPostMetaData off from getPostDataList again: the ids baked
+// into the index must exist in the metadata list the pages are handed, or search returns nothing.
+const ids = new Set(getPostMetaData("./posts").map((post) => post.id));
+searchIndex.forEach((refs: number[]) => {
+  refs.forEach((id: number) => {
+    if (!ids.has(id)) throw new Error(`search index references unknown post id ${id}`);
+  });
+});
+
 const searchIndexJsonString = JSON.stringify(Object.fromEntries(searchIndex.entries()));
 // console.log("Search Index JSON: ", searchIndexJsonString);
 const searchIndexLocation = "./components/elements/search-index.json";
