@@ -26,6 +26,12 @@ export const renderer = {
     const href = /^(https?:|\/)/.test(src) ? src : "/images/posts/" + src.replace(/^\.\//, "")
     return <img key={this.elementId} src={href} alt={alt} className="article-image" />
   },
+  link(href: string, text: ReactNode) {
+    // in-page (#anchor) and internal (/route) links stay in this tab; everything else opens a new one
+    return /^(#|\/)/.test(href)
+      ? <a key={this.elementId} href={href}>{text}</a>
+      : <a key={this.elementId} href={href} target="_blank" rel="noopener noreferrer">{text}</a>
+  },
   heading(children: ReactNode, level: number) {
     switch(level) {
       case 1:
