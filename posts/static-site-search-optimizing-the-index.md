@@ -2,7 +2,7 @@
 title: Static Site Search Part 3 - Optimizing the Index
 date: April 18, 2024
 author: Tyrel Delaney
-tags: static-site-generators nextjs javascript typesense search
+tags: static-site-generators nextjs javascript typescript search
 hero: /images/posts/static-site-search-optimizing-the-index.jpg
 excerpt: This is the final part (for now) on the search functionality for my site. I implemented some optimizations that I alluded to in part 1 & 2. I was able to get my search index for my 20-ish posts from ~700kb down to ~22kb!
 id: 22
@@ -39,7 +39,7 @@ First I added unique IDs to each articles metadata. Just simple consecutive & un
 title: Static Site Search Part 1 - Preprocessing Articles
 date: April 3, 2024
 author: Tyrel Delaney
-tags: static-site-generators nextjs javascript typesense search
+tags: static-site-generators nextjs javascript typescript search
 hero: /images/posts/static-site-search-preprocessing-articles.jpg
 excerpt: In this series of articles I discuss how I created a client-side search for my static website. After looking at a few options out there for static sites and Next.js projects, I decided the challenge to build my own search from scratch would be more enjoyable. This first article discusses how I preprocess my articles into a search index.
 id: 20
@@ -273,5 +273,3 @@ The search is maybe slightly slower than before, because I'm not just doing a si
 In the future, as my number of posts grow, I think I'd like to refactor the `PostMetadata[]` to be a Map on the post IDs instead. Something like `Map<number, PostMetadata>`. That would allow for quick lookup of both the search term results from the search index, and a quick lookup of the corresponding PostMetadata for each search result.
 
 I'll leave it here for now. Thanks for reading, and I hope you found some value in this static site search series. Remember to visit [Part 1](https://superflux.dev/blog/static-site-search-preprocessing-articles) & [2](https://superflux.dev/blog/static-site-search-search-component) to see the my original implementation this refactor is building on.
-
-
