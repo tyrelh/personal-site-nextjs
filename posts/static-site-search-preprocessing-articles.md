@@ -2,7 +2,7 @@
 title: Static Site Search Part 1 - Preprocessing Articles
 date: April 3, 2024
 author: Tyrel Delaney
-tags: static-site-generators nextjs javascript typesense search
+tags: static-site-generators nextjs javascript typescript search
 hero: /images/posts/static-site-search-preprocessing-articles.jpg
 excerpt: In this series of articles I discuss how I created a client-side search for my static website. After looking at a few options out there for static sites and Next.js projects, I decided the challenge to build my own search from scratch would be more enjoyable. This first article discusses how I preprocess my articles into a search index.
 id: 20
@@ -706,5 +706,3 @@ Well thats it for the search index preprocessor. In an upcoming article I'll dis
 Give the search a try! It's near the top on desktop or bottom on mobile.
 
 Hope you found this interesting or useful. 🙌🏻
-
-

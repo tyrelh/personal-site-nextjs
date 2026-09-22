@@ -2,7 +2,7 @@
 title: Static Site Search Part 2 - Search Component
 date: April 10, 2024
 author: Tyrel Delaney
-tags: static-site-generators nextjs javascript typesense search
+tags: static-site-generators nextjs javascript typescript search
 hero: /images/posts/static-site-search-search-component.jpg
 excerpt: This is the followup to Part 1 in this series on building a Static Site Search for my website. In the first part I built a search index of my articles for quick searching. In this part I'll import that search index into my Next project and create a UI to interact with it. The search component described here is live on this site!
 id: 21
