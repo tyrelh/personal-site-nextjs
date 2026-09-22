@@ -24,7 +24,7 @@ export const renderer = {
   image(src: string, alt: string) {
     // absolute and external URLs are used as-is; bare filenames live in /images/posts/
     const href = /^(https?:|\/)/.test(src) ? src : "/images/posts/" + src.replace(/^\.\//, "")
-    return <img key={this.elementId} src={href} alt={alt} className="article-image" />
+    return <img key={this.elementId} src={href} alt={alt} className="article-image" loading="lazy" />
   },
   link(href: string, text: ReactNode) {
     // in-page (#anchor) and internal (/route) links stay in this tab; everything else opens a new one
