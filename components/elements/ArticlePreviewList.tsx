@@ -26,7 +26,8 @@ export default function ArticlePreviewList(props: Props) {
               <img
                 className="article-preview-image" 
                 alt=""
-                src={post?.hero ? post.hero : null}/>
+                src={post?.hero ? post.hero : null}
+                loading="lazy"/>
             </Link>
           }
         >
