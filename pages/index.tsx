@@ -1,17 +1,19 @@
 import { GetStaticProps, GetStaticPropsResult } from "next";
-import { PostData, PostMetadata, PostMetadataList } from "../dtos/PostData";
+import { PostData, PostMetadata, PostMetadataList, Tags } from "../dtos/PostData";
 import { sortPostsByDate } from "../utils/dateUtils";
 import HeadW from "../components/layout/HeadW";
 import Anchor from "../components/elements/Anchor";
 import SectionHeading from "../components/elements/SectionHeading";
 import ArticlePreviewList from "../components/elements/ArticlePreviewList";
+import TagCloud from "../components/elements/TagCloud";
 import SocialCallout from "../components/elements/SocialCallout";
 import StickyHeader from "../components/elements/StickyHeader";
 import { getPostDataList, getPostMetaData } from "../utils/articleFileUtils";
 import { getSearchIndex } from "../utils/searchIndexFileUtils";
 import { searchIndexToJson } from "../utils/searchIndexUtils";
+import { getTagCountsFromPostMetadataList } from "../utils/tagUtils";
 
-export default function Home({ posts, searchIndexJson }) {
+export default function Home({ posts, searchIndexJson, tagCounts }) {
   return (
     <>
       <HeadW title="superflux" />
@@ -28,6 +30,11 @@ export default function Home({ posts, searchIndexJson }) {
         Articles
       </SectionHeading>
       <ArticlePreviewList articleMetadataList={posts} />
+
+      <SectionHeading>
+        Tags
+      </SectionHeading>
+      <TagCloud tags={tagCounts} />
     </>
   );
 }
@@ -35,14 +42,16 @@ export default function Home({ posts, searchIndexJson }) {
 // GET POST METADATA FROM MARKDOWN ARTICLES
 export const getStaticProps: GetStaticProps = async (
   context
-): Promise<GetStaticPropsResult<{posts: PostMetadata[], searchIndexJson: string }>> => {
+): Promise<GetStaticPropsResult<{posts: PostMetadata[], searchIndexJson: string, tagCounts: Tags }>> => {
   const searchIndex = getSearchIndex();
   const searchIndexJson = searchIndexToJson(searchIndex);
   const postMetadataList: PostMetadata[] = getPostMetaData();
+  const tagCounts: Tags = getTagCountsFromPostMetadataList(postMetadataList);
   return {
     props: {
       posts: postMetadataList.sort(sortPostsByDate),
-      searchIndexJson
+      searchIndexJson,
+      tagCounts
     },
   };
 };

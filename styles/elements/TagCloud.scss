@@ -1,0 +1,37 @@
+@import "../_fonts.scss";
+@import "../_colors.scss";
+
+.tag-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.6rem 1rem;
+  margin: 1rem 0 2rem;
+}
+
+.tag-cloud-item {
+  display: inline-block;
+  color: $color-hashtag;
+  background-color: $color-hashtag-background;
+  border-radius: 5px;
+  font-family: $font-code;
+  padding: 0.2rem 0.6rem;
+  line-height: 1.2;
+  transition: color 0.2s ease, background-color 0.2s ease;
+
+  &:hover {
+    color: $color-hashtag-hover;
+  }
+}
+
+.light-mode {
+  .tag-cloud-item {
+    color: darken($color-hashtag-light-theme, 5%);
+    background-color: $color-hashtag-background-light-theme;
+
+    &:hover {
+      color: $color-hashtag-hover-light-theme;
+    }
+  }
+}

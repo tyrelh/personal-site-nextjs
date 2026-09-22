@@ -1,4 +1,4 @@
-import { PostData } from "../dtos/PostData";
+import { PostData, PostMetadata, Tags } from "../dtos/PostData";
 
 export const getTagsFromPostDataList =(postData: PostData[]): string[] => {
   const tags = new Set<string>(); // Set forces only unique tags
@@ -8,4 +8,13 @@ export const getTagsFromPostDataList =(postData: PostData[]): string[] => {
     });
   }); 
   return Array.from(tags);
+}
+
+export const getTagCountsFromPostMetadataList = (posts: PostMetadata[]): Tags => {
+  return posts.reduce((tagCounts: Tags, post: PostMetadata) => {
+    post.tags.forEach((tag: string) => {
+      tagCounts[tag] = (tagCounts[tag] || 0) + 1;
+    });
+    return tagCounts;
+  }, {});
 }
