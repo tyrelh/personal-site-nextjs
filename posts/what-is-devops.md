@@ -4,7 +4,7 @@ date: "April 10, 2022"
 author: "Tyrel Hiebert"
 excerpt: "In my role as a software developer at my day job, I’ve been getting more interested in DevOps as a career trajectory. But what does that even mean? Do I even know? This is a brief exploration into what DevOps is and how I see it relating to a small development team."
 hero: "/images/posts/development-cycle.jpg"
-tags: "devops automation github-actions"
+tags: "devops automation github-actions platform"
 id: 13
 ---
 

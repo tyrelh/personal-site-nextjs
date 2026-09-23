@@ -11,6 +11,7 @@ tags:
   - fluent-bit
   - logging
   - observability
+  - platform
 hero: >-
   /images/posts/shipping-ecs-fargate-logs-to-datadog-with-firelens-and-what-broke-ecs-fargate-logs-hero.png
 excerpt: >-

@@ -4,7 +4,7 @@ date: "July 23, 2023"
 author: "Tyrel Delaney"
 excerpt: "I cover the config and deployment steps necessary to easily deploy a static site built with Next.js to GitHub Pages."
 hero: "/images/posts/NextJSGitHubPagesHero.png"
-tags: "github-pages nextjs react static-site-generators typescript javascript"
+tags: "github-pages nextjs react static-site-generators typescript javascript cicd platform"
 id: 16
 ---
 
