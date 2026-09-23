@@ -6,6 +6,7 @@ tags:
   - certification
   - solutions-architect
   - udemy
+  - infrastructure
 related:
   - '[[AWS Certified Solutions Architect Associate prep course]]'
 hero: >-
