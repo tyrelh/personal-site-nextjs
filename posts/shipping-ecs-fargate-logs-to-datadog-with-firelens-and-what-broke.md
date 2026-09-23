@@ -102,7 +102,7 @@ logConfiguration = {
 
 The API key lives in Secrets Manager and ECS injects it through `secretOptions`, so it never lands in the task definition JSON or in state. The `:api_key::` suffix pulls a single key out of a JSON secret: the format is `<arn>:<json-key>:<version-stage>:<version-id>`, and the trailing colons are the empty version fields. It's in the [AWS docs](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data-tutorial.html), but it's easy to skim past, and getting it wrong gives you a container that won't start with a message about the secret, not the format.
 
-Logs showed up in Datadog within minutes. It really was that easy, right up until Saturday.
+Logs showed up in Datadog within minutes. It really was that easy, until Saturday.
 
 ## Breakage #1: our tags weren't applied (except they were)
 
@@ -110,13 +110,13 @@ Logs showed up in Datadog within minutes. It really was that easy, right up unti
 
 So I filed a bug. I was looking at the *Attributes* section of the log side panel, and tags are in the *Tags* section. They'd been applied the whole time. Five days later I closed it with a comment that amounts to "oh, this already works, I was looking at the wrong panel."
 
-The bug wasn't real, but the confusion was. Datadog splits log metadata into two things that look identical when you're new to it.
+Datadog does make this easy to get wrong, because it splits log metadata into two things that look identical when you're new to it.
 
 Tags are infrastructure-level metadata: `dd_tags`, the ECS metadata from `enable-ecs-log-metadata`, `service`, `source`, `env`. They share a namespace with your metrics and traces, which is what lets you pivot from a log to a dashboard. You query them bare, like `env:prod`.
 
 Attributes are the parsed contents of your JSON log body, whatever your logger emitted. You query them with an `@` prefix, like `@env:prod`.
 
-A working config looks broken if you're reading the wrong panel. Ten minutes of poking at the log panel would have saved me the ticket.
+Ten minutes of poking at the log panel would have saved me the ticket.
 
 ## Breakage #2: every log is INFO
 
@@ -132,7 +132,7 @@ Datadog [preprocesses JSON logs](https://docs.datadoghq.com/logs/log_configurati
 
 > if a JSON formatted log file includes one of the following attributes, Datadog interprets its value as the log's official status: `status`, `severity`, `level`, `syslog.severity`
 
-`level` is in that list, and it was before our incident. Our preprocessing config is stock, so Go's default `slog` output was always going to be read correctly. So why was everything INFO? Two things in the docs, both easy to read past.
+`level` is in that list, and it was before our incident. Our preprocessing config is stock, so Go's default `slog` output was always going to be read correctly. What actually made everything INFO is in two details of the docs that are easy to read past.
 
 First, the list is ordered, and the order *is* the precedence. I'd read it as a set. Preprocessing takes the *first* of those attributes it finds, so with both `status` and `level` present, `level` is never consulted.
 
@@ -203,7 +203,7 @@ If you got here from the symptom, Datadog has a guide: [Logs show INFO status fo
 
 ## So what did I learn?
 
-The integration was twenty lines of config. The hard part was the semantics: which metadata is a tag and which is an attribute, and who owns the word `status`. Datadog won't tell you it preferred a different attribute than the one you meant, and a fix that ships next to the real one will happily take the credit for months, because the symptom went away and nobody had a reason to look closer.
+The integration was twenty lines of config. The hard part was the semantics: which metadata is a tag and which is an attribute, and who owns the word `status`. Datadog won't tell you it preferred a different attribute than the one you meant, and a fix that ships next to the real one will take the credit for months, because the symptom went away and nobody had a reason to look closer.
 
 So distrust the pipeline until you've personally seen one WARN and one tag in the UI. And when the symptom clears, make sure you know *which* change cleared it.
 
