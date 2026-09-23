@@ -51,7 +51,7 @@ We were already using Datadog, so the destination was decided. The question was 
 
 We went with FireLens. It's what both [AWS](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html) and [Datadog](https://docs.datadoghq.com/integrations/ecs_fargate/?tab=webui#log-collection) point you at for Fargate, it's configured entirely in the task definition (so it's Terraform, not application code), and the application just writes JSON to stdout like it always did.
 
-The timeline matters for the rest of this article, so: logs were flowing on a Wednesday in June. I filed two bugs against my own setup that Saturday, and both were closed the following Thursday. About a week from "it works" to "it actually works". It took a few more months to understand why.
+Logs were flowing on a Wednesday in June. I filed two bugs against my own setup that Saturday, and both were closed the following Thursday, so it took about a week to get from "it works" to "it actually works". Understanding why took a few more months.
 
 ## The happy path
 
@@ -106,9 +106,7 @@ logConfiguration = {
 
 The API key goes in Secrets Manager and gets injected by ECS through `secretOptions`, so it never lands in the task definition JSON or in state. Note the `:api_key::` suffix on the ARN. That's ECS pulling a single key out of a JSON secret. The format is `<arn>:<json-key>:<version-stage>:<version-id>`, and the trailing colons are the empty version fields. It's in the [AWS docs](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data-tutorial.html), but it's easy to skim past and hard to debug when you get it wrong, because the failure mode is a container that won't start with a message about the secret, not about the format.
 
-I deployed this and logs showed up in Datadog within minutes. It really was that easy.
-
-That was Wednesday. On Saturday I filed two bugs.
+I deployed this on the Wednesday and logs showed up in Datadog within minutes. It really was that easy, right up until Saturday, when I filed two bugs.
 
 ## Breakage #1: our tags weren't applied (except they were)
 
@@ -150,7 +148,7 @@ Two things in the docs explain it, and both are easy to read straight past.
 
 First, the list is ordered. Preprocessing takes the *first* of those attributes it finds. `status` is first and `level` is third, so if both are present, `level` is never consulted.
 
-Second, unrecognized values don't fail, they become INFO. From the [Log Status Remapper docs](https://docs.datadoghq.com/logs/log_configuration/processors/log_status_remapper/), integers 0 through 7 map to Syslog severities, and "All others map to info (6)." Note that this is different from the attribute being missing. A missing `status` means the search continues down the list to `severity`, then `level`. A `status` that's present but holds a value Datadog can't read ends the search right there, at INFO. No error, no fallback, and no indication anywhere that Datadog looked at your value and didn't understand it.
+Second, unrecognized values don't fail, they become INFO. From the [Log Status Remapper docs](https://docs.datadoghq.com/logs/log_configuration/processors/log_status_remapper/), integers 0 through 7 map to Syslog severities, and "All others map to info (6)." Note that this is different from the attribute being missing. A missing `status` means the search continues down the list to `severity`, then `level`. A `status` that's present but holds a value Datadog can't read ends the search right there, at INFO. You get no error and no fallback, and nothing anywhere tells you Datadog looked at your value and didn't understand it.
 
 ### The actual root cause
 
@@ -164,7 +162,7 @@ That's the HTTP status code, in the reserved attribute, on every single request 
 
 So preprocessing found `status`, which is first in the list. It read `200`, which is not in 0-7. It mapped that to INFO and stopped looking. `level` was sitting right there in the same log line, correctly populated, and never got read.
 
-This was so quiet because an HTTP status code is a *plausible* integer. Datadog has no reason to think anything is wrong with it, it just happens to never be a valid Syslog severity. `200`, `404`, and `500` all map to INFO identically, so a 500 response and a 200 response produced log lines with the same severity. Which is precisely the case you'd want to alert on.
+This was so quiet because an HTTP status code is a *plausible* integer. Datadog has no reason to think anything is wrong with it, it just happens to never be a valid Syslog severity. `200`, `404`, and `500` all map to INFO identically, so a 500 response and a 200 response produced log lines with the same severity, and a 500 is exactly the case you'd want to alert on.
 
 ### The fix, and the half of it that did nothing
 
@@ -216,7 +214,7 @@ If you land here from the symptom rather than the cause, Datadog has a guide for
 
 * Grep for reserved attribute names before the first deploy. I covered this above, but it's the single highest-value thing on this list.
 * Verify on day one with one log line at each level. Emit a DEBUG, an INFO, a WARN and an ERROR from the application as the very first thing after logs start flowing, and confirm all four in the UI. I found this three days late because "logs are showing up" felt like done.
-* Learn the tags versus attributes split before filing a bug against yourself. Ten minutes with the log side panel would have saved a ticket and some embarrassment.
+* Learn the tags versus attributes split before filing a bug against yourself. It would have spared me some embarrassment.
 * Read past the attribute list to the attribute order. The documentation is correct and complete. It lists the four attributes, and the order *is* the precedence. I read that list as a set.
 * Decide your retention before you need it. We were dual-writing to CloudWatch and Datadog for a while, paying twice for the same lines, and landed on a 30-day Datadog retention. That retention window is also why I couldn't audit this later. By the time I went back to check whether the rename had actually done anything, the original logs were long gone and I had to reconstruct it from the diff and the docs.
 * Know when direct HTTP is the better answer. FireLens is the right default for Fargate because it's declarative and lives outside your application. But if you're running somewhere ECS doesn't reach, or you need to do something at ship time that a Fluent Bit output plugin doesn't support, Datadog's HTTP intake is right there. Just keep in mind that "our application now owns log delivery" is a real cost, and you should be taking it on deliberately.
@@ -225,7 +223,7 @@ If you land here from the symptom rather than the cause, Datadog has a guide for
 
 The integration itself is about twenty lines of config and it worked on the first deploy. The hard part was the semantics: which metadata is a tag and which is an attribute, and who owns the word `status`.
 
-Only one of the two was a real failure, and it was silent: Datadog doesn't tell you it preferred a different attribute than the one you meant, or that it read a value it didn't understand. The other wasn't a failure at all, it was me reading the wrong panel while the config worked fine. And a fix that ships next to the real fix will happily take the credit for months, because the symptom went away and nobody had a reason to look closer.
+Only one of the two was a real failure, and it was silent: Datadog doesn't tell you it preferred a different attribute than the one you meant, or that it read a value it didn't understand. The other was me reading the wrong panel while the config worked fine. And a fix that ships next to the real fix will happily take the credit for months, because the symptom went away and nobody had a reason to look closer.
 
 So distrust the pipeline until you've personally seen one WARN and one tag in the UI. And when the symptom clears, make sure you know *which* change cleared it.
 
