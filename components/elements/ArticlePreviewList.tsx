@@ -37,9 +37,9 @@ export default function ArticlePreviewList(props: Props) {
             </h3>
             {
               post?.date &&
-                <h4>
+                <span className="post-metadata">
                   <CalendarOutlined /> {post.date}  <ReadOutlined className="readtime-icon" /> {post.readTimeInMinutes} Minute Read
-                </h4>
+                </span>
             }
             <p className="article-preview-excerpt">
               {post?.excerpt ? post.excerpt : null}
