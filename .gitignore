@@ -36,3 +36,6 @@ yarn-error.log*
 
 # compiled preprocessors
 /preprocessors/**/*.js
+
+# lathe
+lathe.toml
