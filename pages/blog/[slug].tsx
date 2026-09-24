@@ -25,7 +25,7 @@ export default function PostPage({ post, postMetadataList, searchIndexJson }) {
       <StickyHeader searchIndexJson={searchIndexJson} postMetadataList={postMetadataList} title={post.slug} path={["blog"]}/>
       <h1>{post.title}</h1>
       {post?.date &&
-          <h4><CalendarOutlined /> {post.date}</h4>
+          <span className="article-metadata"><CalendarOutlined /> {post.date}</span>
       }
       <p>
         {post.tags.map((tag: string) => (
