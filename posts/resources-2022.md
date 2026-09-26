@@ -24,7 +24,7 @@ Here are the resources I found interesting. Some related to kids, some related t
 
 * Static Blog With Next.js and Markdown from Traversy Media
 
-[Hardware, Networking, & Raspberry Pi](#hardware-networking-raspberry-pi)
+[Hardware, Networking, & Raspberry Pi](#hardware-networking--raspberry-pi)
 
 * Jeff Geerling youtube channel on Raspberry Pis and home servers/networking
 * SpaceRex and WunderTech youtube channels covering Synology NASs
