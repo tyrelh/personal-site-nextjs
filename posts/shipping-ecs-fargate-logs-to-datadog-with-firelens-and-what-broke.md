@@ -34,13 +34,13 @@ This past June I set up log shipping from ECS Fargate to Datadog using FireLens.
 
 ## Tl;dr
 
-[The setup](#The%20setup): A new Go API on ECS Fargate, and three ways to get its logs into Datadog.
-[The happy path](#The%20happy%20path): About twenty lines of Terraform for the log router and the app's log config.
-[Breakage #1: our tags weren't applied (except they were)](#Breakage%20%231%3A%20our%20tags%20weren't%20applied%20(except%20they%20were)): I filed a bug on myself for mixing up tags and attributes.
-[Breakage #2: every log is INFO](#Breakage%20%232%3A%20every%20log%20is%20INFO): We logged the HTTP status code as `status`, which is a reserved attribute. Datadog read `200` as a severity.
-[What I'd do differently](#What%20I'd%20do%20differently): Grep for reserved attribute names, and prove each log level on day one.
-[So what did I learn?](#So%20what%20did%20I%20learn%3F)
-[Resources and links](#Resources%20and%20links)
+[The setup](#the-setup): A new Go API on ECS Fargate, and three ways to get its logs into Datadog.
+[The happy path](#the-happy-path): About twenty lines of Terraform for the log router and the app's log config.
+[Breakage #1: our tags weren't applied (except they were)](#breakage-1-our-tags-werent-applied-except-they-were): I filed a bug on myself for mixing up tags and attributes.
+[Breakage #2: every log is INFO](#breakage-2-every-log-is-info): We logged the HTTP status code as `status`, which is a reserved attribute. Datadog read `200` as a severity.
+[What I'd do differently](#what-id-do-differently): Grep for reserved attribute names, and prove each log level on day one.
+[So what did I learn?](#so-what-did-i-learn)
+[Resources and links](#resources-and-links)
 
 ## The setup
 
