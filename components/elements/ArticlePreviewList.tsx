@@ -1,4 +1,5 @@
 import { List } from "antd"
+import type { ListProps } from "antd"
 import { CalendarOutlined, ReadOutlined } from "@ant-design/icons"
 import { PostData, PostMetadata } from "../../dtos/PostData"
 import Link from "next/link"
@@ -7,10 +8,11 @@ import Hashtag from "./Hashtag"
 
 export interface Props {
   articleMetadataList: PostMetadata[]
+  pagination?: ListProps<PostMetadata>['pagination']
 }
 
 export default function ArticlePreviewList(props: Props) {
-  const { articleMetadataList } = props
+  const { articleMetadataList, pagination } = props
   
   return (
     <List
@@ -18,6 +20,7 @@ export default function ArticlePreviewList(props: Props) {
       size="large"
       split={false}
       dataSource={articleMetadataList}
+      pagination={pagination}
       renderItem={ (post: PostMetadata | PostData) => (
         <List.Item
           key={post.slug}
