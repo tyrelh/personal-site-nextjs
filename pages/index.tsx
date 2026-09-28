@@ -29,7 +29,7 @@ export default function Home({ posts, searchIndexJson, tagCounts }) {
       <SectionHeading>
         Articles
       </SectionHeading>
-      <ArticlePreviewList articleMetadataList={posts} pagination={{ pageSize: 15, showSizeChanger: false }} />
+      <ArticlePreviewList articleMetadataList={posts} pagination={{ pageSize: 15, showSizeChanger: false, onChange: () => window.scrollTo({ top: 0 }) }} />
 
       <SectionHeading>
         Tags

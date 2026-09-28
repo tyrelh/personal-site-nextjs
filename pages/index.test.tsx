@@ -1,10 +1,12 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { renderToStaticMarkup } from "react-dom/server";
 import type { PostMetadata } from "../dtos/PostData";
+import type { Props } from "../components/elements/ArticlePreviewList";
+import type { PaginationConfig } from "antd/es/pagination";
 import Home, { getStaticProps } from "./index";
 import { getPostMetaData } from "../utils/articleFileUtils";
 
-const { preview } = vi.hoisted(() => ({ preview: vi.fn((_props: unknown) => null) }));
+const { preview } = vi.hoisted(() => ({ preview: vi.fn((_props: Props) => null) }));
 
 vi.mock("../components/elements/ArticlePreviewList", () => ({ default: preview }));
 vi.mock("../components/layout/HeadW", () => ({ default: () => null }));
@@ -22,7 +24,7 @@ const makePost = (slug: string, date: string): PostMetadata => ({
 });
 
 describe("homepage articles", () => {
-  beforeEach(() => preview.mockClear());
+  beforeEach(() => { preview.mockClear(); });
 
   it("enables fixed 15-item pages for the homepage list", () => {
     const posts = [makePost("new", "April 12, 2024")];
@@ -31,8 +33,18 @@ describe("homepage articles", () => {
     expect(preview).toHaveBeenCalledOnce();
     expect(preview.mock.calls[0][0]).toEqual({
       articleMetadataList: posts,
-      pagination: { pageSize: 15, showSizeChanger: false },
+      pagination: { pageSize: 15, showSizeChanger: false, onChange: expect.any(Function) },
     });
+  });
+
+  it("scrolls to the top of the page when changing pages", () => {
+    const scrollTo = vi.fn();
+    vi.stubGlobal("window", { scrollTo });
+    renderToStaticMarkup(<Home posts={[]} searchIndexJson="[]" tagCounts={{}} />);
+
+    (preview.mock.calls[0][0].pagination as PaginationConfig).onChange!(2, 15);
+    expect(scrollTo).toHaveBeenCalledWith({ top: 0 });
+    vi.unstubAllGlobals();
   });
 
   it("keeps posts sorted newest first before pagination", async () => {
